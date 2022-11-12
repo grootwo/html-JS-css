@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Letter</title>
+
+    <meta property="og:image"
+        content="https://img.freepik.com/free-photo/christmas-background-with-christmas-greeting-message-white-background_24972-1694.jpg?w=2000">
+    <meta property="og:title" content="크리스마스 편지">
+    <meta property="og:description" content="링크를 통해 확인해보세요"!>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Song Myung', serif;
+        }
+
+        body {
+            background-color: #970108;
+        }
+
+        .letter-close {
+            display: block;
+        }
+
+        .letter-open {
+            display: none;
+        }
+
+        .letter {
+            width: 250px;
+            height: 180px;
+
+            background-image: url('https://pngimg.com/uploads/envelope/envelope_PNG18366.png');
+            background-size: cover;
+            background-position: center;
+
+            margin: 210px auto 0 auto;
+
+            cursor: pointer;
+        }
+
+        .letter-msg {
+            color: antiquewhite;
+            text-align: center;
+        }
+
+        .circle {
+            background-color: burlywood;
+
+            width: 160px;
+            height: 160px;
+
+            background-image: url('https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker+(2).gif');
+            background-size: cover;
+            background-position: center;
+
+            margin: 90px auto 0px auto;
+
+            border-radius: 130px;
+            border: 7px solid burlywood;
+            box-shadow: 0px 0px 15px 3px burlywood;
+        }
+
+        .letter2 {
+            background-color: burlywood;
+            width: 370px;
+            margin: auto;
+
+            padding: 30px;
+
+            color: #970108;
+            font-size: 20px;
+            line-height: 32px;
+
+            box-shadow: 0px 0px 10px 3px burlywood;
+        }
+
+        h2 {
+            color: burlywood;
+            text-align: center;
+            margin: 30px auto 30px auto;
+        }
+
+        .from {
+            text-align: right;
+            margin-bottom: 0px;
+        }
+
+        @media screen and (max-width: 760px) {
+            .letter2 {
+                width: 250px;
+                padding: 30px;
+            }
+
+            .circle {
+                width: 130px;
+                height: 130px;
+                margin: 60px auto 0px auto;
+            }
+
+            .letter {
+                width: 200px;
+                height: 150px;
+                margin: 200px auto 0 auto;
+            }
+
+            h2 {
+                margin: 20px auto 20px auto;
+            }
+        }
+    </style>
+
+    <script>
+        function open_letter() {
+            document.getElementsByClassName("letter-close")[0].style.display = 'none'
+            document.getElementsByClassName("letter-open")[0].style.display = 'block'
+        }
+
+        function open_circle() {
+            alert('Merry Christmas~!');
+            window.location.href = 'https://www.youtube.com/watch?v=yXQViqx6GMY';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="letter-close">
+        <div class="letter" onclick="open_letter()"></div>
+        <h1 class="letter-msg">봉투를 열어 보세요!</h1>
+    </div>
+
+    <div class="letter-open">
+        <div class="circle" onclick="open_circle()"></div>
+        <h2>따뜻하고 행복한 연말이 되기를!</h2>
+        <div class="letter2">
+            사랑하는 당신에게 <br />
+            <br />
+            우리가 기다리던 연말이 다가왔어. <br />
+            마음도 설레고 날씨도 선선해. <br />
+            마지막이라는 새로운 시작으로 <br />
+            함께 나아가 보자! <br />
+            <p class="from">사랑을 담아 씀</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

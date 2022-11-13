@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="https://new-year.spartacodingclub.kr/images/favicon.png">
+    <meta property="og:title" content="신년운세 by 르탄!" />
+    <meta property="og:description" content="2021년 띠 별 운세를 알려드립니다" />
+    <meta property="og:image" content="https://new-year.spartacodingclub.kr/images/ogimage.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021 신년 쪽지</title>
+    <script type="text/javascript" src="https://new-year.spartacodingclub.kr/newyear.js"></script>
+    <style>
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        body {
+            background-color: ivory;
+            background-image: url("https://new-year.spartacodingclub.kr/images/pattern.png");
+            background-position: 550px 100px;
+            background-repeat: no-repeat;
+        }
+
+        .rtan {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+            border: 3px solid darkred;
+            background-color: darkred;
+            box-shadow: 0px 0px 10px 0px darkred;
+            margin: 70px auto 50px auto;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://new-year.spartacodingclub.kr/images/yearS1.png');
+            color: white;
+            font-size: 32px;
+            text-decoration: none;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .title {
+            color: darkred;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .msg {
+            color: darkred;
+            text-align: center;
+            line-height: 38px;
+            display: none;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            width: 150px;
+            height: 50px;
+            font-size: 15px;
+            color: darkred;
+            background-color: ivory;
+            border: solid 2px darkred;
+            border-radius: 7px;
+
+            cursor: pointer;
+        }
+
+        .btn-share {
+            width: 150px;
+            height: 50px;
+            font-size: 15px;
+            color: ivory;
+            background-color: darkred;
+            border: solid 2px darkred;
+            border-radius: 7px;
+
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 780px) {
+            body {
+                background-position: 70px -70px;
+                background-size: 500px;
+            }
+
+            .rtan {
+                margin-top: 50px;
+            }
+
+            .msg {
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 36px;
+                padding: 10px;
+                display: none;
+            }
+
+            .msg>br {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function back() {
+            let url = window.location.href;
+            let new_url = url.split('result.html')[0] + 'index.html';
+            window.location.href = new_url;
+        }
+        function share() {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = window.location.href;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert('링크 복사 완료!')
+        }
+    </script>
+</head>
+
+<body>
+    <div class="rtan">쥐</div>
+    <h1 class="title">¿2021 쥐띠의 운세는¡</h1>
+    <p class="msg" id="rtan1" aria-label="쥐띠">
+        새로운 도전을 하게 되어 많이 불안하지?<br />
+        진정하고픈 마음과는 반대로 심장은 마구 뛰고.<br />
+        그럼에도 나는 해낼 수 있다는 것을 잊지 말자!<br />
+        너무 걱정하지 말고 하루하루 잘 나아가봐~
+    </p>
+    <p class="msg" id="rtan2" aria-label="소띠">
+        자신감이 마구 솓아나는걸!<br />
+        기대하는 것보다 더 크게 성공할 거야.<br />
+        여기까지 걸어온 자신을 뿌듯하게 생각하자!<br />
+        또 더 나아갈 자신을 믿어주자!
+    </p>
+    <p class="msg" id="rtan3" aria-label="호랑이띠">
+        혼자만 제자리걸음을 하는 것 같아서 조바심 나니?<br />
+        혹은 뒷걸음질 했다고 좌절했니?<br />
+        <br />
+        꽃은 저마다의 개화시기가 있다는 것을 알아?<br />
+        우리의 만개를 위하여 영양분을 충분히 섭취하고,<br />
+        햇살 한 모금 씩 보충해가자.
+    </p>
+    <p class="msg" id="rtan4" aria-label="토끼띠">
+        오늘은 걸어서 어디를 향해보는 것은 어때?<br />
+        힘이 난다면 한 번 달려봐!<br />
+        튼튼해지는 근육이 느껴지니?<br />
+        아니라면 운동해¡
+    </p>
+    <p class="msg" id="rtan5" aria-label="용띠">
+        소중한 것을 잃고 싶지 않아서 양손을 꽉 쥐었니?<br />
+        파도가 지나간 자리는 아무 흔적도 남지 않지만,<br />
+        그 무(無) 자체가 파도의 자취가 되더라.<br />
+        한 번 숨을 쉬고 파도 소리에 귀를 기울여봐.
+    </p>
+    <p class="msg" id="rtan6" aria-label="뱀띠">
+        오늘 날씨는 어때?<br />
+        지금 감정은 어때?<br />
+        무슨 생각을 하고 있어?<br />
+        일기에 한 번 써볼래?
+    </p>
+    <p class="msg" id="rtan7" aria-label="말띠">
+        왠지 즐거운 일이 일어날 것 같아.<br />
+        예측 불가능은 두려움을 일으키기도 하지만,<br />
+        오늘만큼은 기대를 해봐.<br />
+        길가에서 뽀송하고 건강한 고양이를 만나길!
+    </p>
+    <p class="msg" id="rtan8" aria-label="양띠">
+        당신이 행복했던 순간은?<br />
+        당신이 행복할 것 같은 순간은?<br />
+        하나씩 써보는 것도 꽤 행복해!
+    </p>
+    <p class="msg" id="rtan9" aria-label="원숭이띠">
+        당신, 잠깐.<br />
+        거북목 방지 위원회에서 순찰나왔습니다.<br />
+        허리피고, 목을 세우고, 스트레칭을 해주세요.<br />
+        눈도 깜빡여주고.<br />
+        올해부터 바른자세 힘줘!
+    </p>
+    <p class="msg" id="rtan10" aria-label="닭띠">
+        으악하고 넘어졌니?<br />
+        너무 힘들다면 주변 사람들에게 도움을 요청해보는 것도 괜찮다고 생각해.<br />
+        너 말대로 슬픔은 나누면 반이 되거든.<br />
+        슬픔은 조금씩 바스라지고, 곧 햇빛이 비칠거야.<br />
+        내 손을 잡고 다시 일어나볼래?
+    </p>
+    <p class="msg" id="rtan11" aria-label="개띠">
+        '글쓰기는 사랑하는 것을 불멸화하는 것이다.'<br />
+        <br />
+        우리의 손으로 남긴 기록은 역사가 될거야.<br />
+        꼭 글쓰기가 아니어도 되니까,<br />
+        지금 사랑하는 것을 내 방식대로 남겨보자!
+    </p>
+    <p class="msg" id="rtan12" aria-label="돼지띠">
+        들려?<br />
+        재물운이 여성들에게 굴러오는 소리.<br />
+        매수하기로 했던 종목들 확인해보러 가자.<br />
+        놓치면 안돼!!
+    </p>
+    <div class="btns">
+        <button onclick="back();" class="btn-back">뒤로가기</button>
+        <button onclick="share();" class="btn-share">공유하기</button>
+    </div>
+</body>
+
+</html>

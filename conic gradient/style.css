@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+}
+
+.ingredient {
+    margin: 30px auto 30px auto;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container {
+    margin: auto auto auto auto;
+    width: 300px;
+    height: 300px;
+    background-image: conic-gradient(from 180deg, rgb(255, 91, 91), rgb(255, 239, 95), rgb(95, 124, 255), rgb(255, 91, 91));
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    % is location.
+
+    background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+    deg is degree.
+
+*/

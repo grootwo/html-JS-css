@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="https://new-year.spartacodingclub.kr/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stylish&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나를 소개하자!</title>
+    <script type="text/javascript" src="https://new-year.spartacodingclub.kr/newyear.js"></script>
+    <style>
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+
+        .rtan {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+            background-color: rgb(255, 149, 10);
+            margin: 140px auto 50px auto;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://new-year.spartacodingclub.kr/images/yearS1.png');
+            color: white;
+            font-size: 32px;
+            text-decoration: none;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .title {
+            color: white;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .msg {
+            font-size: 35px;
+            color: white;
+            text-align: center;
+            line-height: 32px;
+            display: none;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            color: rgb(255, 149, 10);
+            background-color: ivory;
+            border: none;
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 780px) {
+            body {
+                background-position: 70px -70px;
+                background-size: 500px;
+            }
+
+            .rtan {
+                margin-top: 150px;
+            }
+
+            .msg {
+                font-size: 24px;
+                line-height: 36px;
+                margin-bottom: 36px;
+                padding: 10px;
+                display: none;
+            }
+
+            .msg>br {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function back() {
+            let url = window.location.href;
+            let new_url = url.split('result_for_mentor.html')[0] + 'index_for_mentor.html';
+            window.location.href = new_url;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="rtan">쥐</div>
+    <p class="msg" id="rtan1" aria-label="쥐띠">
+        나는 ____을(를) 잘 할 수 있다.
+    </p>
+    <p class="msg" id="rtan2" aria-label="소띠">
+        ____은(는) ____을(를) 잘 할 수 있다.
+    </p>
+    <p class="msg" id="rtan3" aria-label="호랑이띠">
+        나는 ____이(가) 서투르다.
+    </p>
+    <p class="msg" id="rtan4" aria-label="토끼띠">
+        내가 좋아하는 계절은 ____(이)다.
+    </p>
+    <p class="msg" id="rtan5" aria-label="용띠">
+        나는 평소에 ____을(를) 한다.
+    </p>
+    <p class="msg" id="rtan6" aria-label="뱀띠">
+        나는 ____에게 ____(라)고 말하고 싶다.
+    </p>
+    <p class="msg" id="rtan7" aria-label="말띠">
+        나는 말하기를 ____한다.
+    </p>
+    <p class="msg" id="rtan8" aria-label="양띠">
+        내가 자신 있는 운동은 ____이다.
+    </p>
+    <p class="msg" id="rtan9" aria-label="원숭이띠">
+        나는 ____(을)를 하고 싶다.
+    </p>
+    <p class="msg" id="rtan10" aria-label="닭띠">
+        나는 일기를 ____한다.
+    </p>
+    <p class="msg" id="rtan11" aria-label="개띠">
+        나는 정리를 ____한다.
+    </p>
+    <p class="msg" id="rtan12" aria-label="돼지띠">
+        나는 ____에게 ____(라)고 듣고 싶다.
+    </p>
+    <div class="btns">
+        <button onclick="back();" class="btn-back">뒤로가기</button>
+    </div>
+</body>
+
+</html>

@@ -50,3 +50,8 @@ table {
 #login-form input:focus {
     outline: none;
 }
+
+.nav__link {
+	text-decoration: none;
+	color: inherit;
+}

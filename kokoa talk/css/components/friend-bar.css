@@ -1,0 +1,16 @@
+.friend-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.friend-bar__title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.friend-bar__icon i {
+    margin-left: 25px;
+}

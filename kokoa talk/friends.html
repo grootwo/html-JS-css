@@ -25,9 +25,9 @@
     <header class="friend-bar">
       <h1 class="friend-bar__title">Friend</h1>
       <div class="friend-bar__icon">
-        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-        <i class="fa-solid fa-music fa-lg"></i>
-        <i class="fa-solid fa-gear fa-lg"></i>
+        <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+        <span><i class="fa-solid fa-music fa-lg"></i></span>
+        <span><i class="fa-solid fa-gear fa-lg"></i></span>
       </div>
     </header>
     <nav class="nav">
@@ -35,9 +35,15 @@
         <li class="nav__btn">
           <a class="nav__link" href="friends.html"><i class="fa-solid fa-user fa-2x"></i></i></a>
         </li>
-        <li class="nav__btn"><a class="nav__link" href="#"><i class="fa-regular fa-comment fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="#">
+          <span class="nav__notification">12</span>
+          <i class="fa-regular fa-comment fa-2x"></i></a>
+        </li>
         <li class="nav__btn"><a class="nav__link" href="#"><i class="fa-solid fa-magnifying-glass fa-2x"></i></a></li>
-        <li class="nav__btn"><a class="nav__link" href="#"><i class="fa-solid fa-ellipsis fa-2x"></i></a></li>
+        <li class="nav__btn"><a class="nav__link" href="#">
+          <span class="nav__alarm"></span>
+          <i class="fa-solid fa-ellipsis fa-2x"></i></a>
+        </li>
       </ul>
     </nav>
     <script

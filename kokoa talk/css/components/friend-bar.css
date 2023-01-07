@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(0, 0, 0, 0.1);
     padding: 20px;
+    margin-top: 25px;
 }
 
 .friend-bar__title {

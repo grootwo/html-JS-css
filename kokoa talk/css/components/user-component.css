@@ -1,6 +1,6 @@
 .user-component {
     display: flex;
-    padding: 13px var(--horizontal-space);
+    padding: 10px var(--horizontal-space);
     justify-content: space-between;
     align-items: center;
 }
@@ -12,6 +12,13 @@
 .user-component__img {
     height: 70px;
     width: 70px;
+    border-radius: 40%;
+    margin-right: 20px;
+}
+
+.user-component__img--lg {
+    height: 80px;
+    width: 80px;
     border-radius: 40%;
     margin-right: 20px;
 }
@@ -41,10 +48,14 @@
 
 .user-component__column:last-child {
     color:rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .user-component__column:last-child span {
     margin-right: 5px;
+    margin: 5px 0;
 }
 
 .not-bold {

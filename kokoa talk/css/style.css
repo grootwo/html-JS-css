@@ -2,13 +2,13 @@
 @import "variables.css";
 
 /* components */
-@import "components/status-bar.css";
 @import "components/nav-bar.css";
 @import "components/screen-header.css";
 @import "components/user-component.css";
 @import "components/badge.css";
 @import "components/alarm-dot.css";
 @import "components/list-view.css";
+@import "components/status-bar.css";
 
 /* screens */
 @import "screens/login.css";

@@ -21,3 +21,11 @@
     display: flex;
     align-items: center;
 }
+
+.find-screen__recommended-friends span {
+    color: var(--text-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+}

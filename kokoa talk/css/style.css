@@ -8,6 +8,7 @@
 @import "components/user-component.css";
 @import "components/badge.css";
 @import "components/alarm-dot.css";
+@import "components/list-view.css";
 
 /* screens */
 @import "screens/login.css";

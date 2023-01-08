@@ -1,0 +1,9 @@
+.list-view {
+    padding: 15px 0;
+    margin: 0 var(--horizontal-space);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color:rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

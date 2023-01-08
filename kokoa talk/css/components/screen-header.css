@@ -1,4 +1,4 @@
-.friend-bar {
+.screen-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,11 +6,11 @@
     margin-top: 25px;
 }
 
-.friend-bar__title {
+.screen-header__title {
     font-size: 30px;
     font-weight: 600;
 }
 
-.friend-bar__icon i {
+.screen-header__icon i {
     margin-left: 25px;
 }

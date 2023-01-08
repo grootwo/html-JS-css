@@ -1,0 +1,7 @@
+.alarm-dot {
+    display: flex;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: tomato;
+}

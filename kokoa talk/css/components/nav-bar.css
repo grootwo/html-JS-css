@@ -24,12 +24,7 @@
     bottom: 15px;
 }
 
-.nav__alarm {
-    display: flex;
-    width: 5px;
-    height: 5px;
-    border-radius: 50px;
-    background-color: tomato;
+.nav__alarm-dot {
     position: absolute;
     left: 30px
 }

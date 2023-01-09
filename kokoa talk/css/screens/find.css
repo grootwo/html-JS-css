@@ -90,13 +90,12 @@
 }
 
 .open-chat-photo span {
-    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4px;
-    border-radius: 30%;
-    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 10px;
     position: absolute;

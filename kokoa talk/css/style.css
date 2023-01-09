@@ -9,6 +9,7 @@
 @import "components/alarm-dot.css";
 @import "components/list-view.css";
 @import "components/status-bar.css";
+@import "components/icons-row.css";
 
 /* screens */
 @import "screens/login.css";

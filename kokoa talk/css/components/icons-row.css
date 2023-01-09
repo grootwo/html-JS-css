@@ -1,0 +1,29 @@
+.icons-row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+    
+}
+
+/* 이거 배열 다시 하자 */
+.icons-row:nth-child(2) {
+    justify-content: none;
+    background-color: blueviolet;
+}
+
+.icons-row__icon {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icons-row__icon span {
+    font-size: 15px;
+    text-align: center;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}

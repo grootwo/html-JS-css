@@ -29,3 +29,81 @@
     align-items: center;
     height: 180px;
 }
+
+.open-chat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 var(--horizontal-space);
+    height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.open-chat__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.open-chat-title {
+    font-size: 18px;
+}
+
+.open-chat-hashtags {
+    font-size: 17px;
+    color: var(--text-gray);
+}
+
+.open-chat__members {
+    display: flex;
+    align-items: center;
+}
+
+.open-chat__members span {
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+.open-chat__members img {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.open-chat__members__divider {
+    height: 15px;
+    width: 2px;
+    background-color: var(--text-gray);
+    margin: 0 5px;
+}
+
+.open-chat-photo {
+    position: relative;
+}
+
+.open-chat-photo img {
+    height: 90px;
+    width: 90px;
+    border-radius: 20%;
+}
+
+.open-chat-photo span {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border-radius: 30%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px
+}
+
+.open-chat-photo i {
+    margin-right: 3px;
+}

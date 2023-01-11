@@ -1,0 +1,25 @@
+.more-screen>span {
+    margin: 0 var(--horizontal-space);
+    display: flex;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.more-screen__icons-row i {
+    background-color: var(--yellow);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.more-screen__icons-row__icon span {
+    color: var(--text-gray);
+}
+
+.user-component__info i {
+    color: tomato;
+}

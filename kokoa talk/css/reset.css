@@ -51,27 +51,7 @@ table {
     outline: none;
 }
 
-.nav__link {
-	text-decoration: none;
-	color: inherit;
-}
-
-.screen-header__icon a {
-	text-decoration: none;
-	color: inherit;
-}
-
-.friends-display__link {
-	text-decoration: none;
-	color: inherit;
-}
-
-.list-view a {
-	text-decoration: none;
-	color: inherit;
-}
-
-.screen-header-alt a {
+a {
 	text-decoration: none;
 	color: inherit;
 }

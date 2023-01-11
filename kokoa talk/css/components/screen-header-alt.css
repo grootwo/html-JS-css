@@ -5,7 +5,26 @@
     margin: 40px var(--horizontal-space);
 }
 
+.screen-header-alt__column {
+    width: 33%;
+}
+
+.screen-header-alt__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+
+.screen-header-alt__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.screen-header-alt__column:last-child i {
+    margin-left: 15px;
+}
+
 .screen-header-alt__column span {
     font-size: 25px;
     font-weight: 400;
+    text-align: center;
 }

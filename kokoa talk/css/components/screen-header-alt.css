@@ -1,0 +1,11 @@
+.screen-header-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px var(--horizontal-space);
+}
+
+.screen-header-alt__column span {
+    font-size: 25px;
+    font-weight: 400;
+}

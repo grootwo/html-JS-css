@@ -1,0 +1,35 @@
+.settings {
+    margin: 0 var(--horizontal-space);
+}
+
+.settings__setting {
+    padding: 15px;
+    border-bottom: var(--gray-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings__column {
+    display: flex;
+    align-items: center;
+}
+
+.settings__setting span {
+    font-size: 22px;
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.settings__column i {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.settings__column i:nth-child(3) {
+    margin-left: 7px;
+    color: tomato;
+}
+
+.settings__column:last-child {
+    color: var(--text-gray);
+}

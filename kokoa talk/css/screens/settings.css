@@ -1,5 +1,5 @@
 .settings {
-    margin: 0 var(--horizontal-space);
+    margin: 25px var(--horizontal-space);
 }
 
 .settings__setting {

@@ -3,10 +3,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px var(--horizontal-space);
-    margin-top: 25px;
+    margin-top: 0px;
     position: fixed;
     width: 100%;
-    background-color: white;
+    background-color: yellow;
 }
 
 .screen-header-alt__column {

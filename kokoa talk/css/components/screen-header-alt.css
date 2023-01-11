@@ -2,7 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px var(--horizontal-space);
+    padding: 15px var(--horizontal-space);
+    margin-top: 25px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
 }
 
 .screen-header-alt__column {

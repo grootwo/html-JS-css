@@ -6,7 +6,8 @@
     top: 20px;
     position: fixed;
     width: 100%;
-    background-color: yellow;
+    background-color: white;
+    box-sizing: border-box;
 }
 
 .screen-header-alt__column {

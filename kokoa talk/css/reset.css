@@ -55,3 +55,13 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+button {
+	border: none;
+	background-color: inherit;
+}
+
+input:focus,
+input:active {
+	outline: none;
+}

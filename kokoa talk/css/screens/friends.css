@@ -1,3 +1,13 @@
+@keyframes hideSplashScreen {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 .friends-display {
     display: flex;
     align-items: center;
@@ -9,4 +19,18 @@
 .friends-display__link i {
     color: rgba(0, 0, 0, 0.2);
     margin-right: 5px;
+}
+
+#flash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--yellow);
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    animation: hideSplashScreen 0.3s ease-in-out forwards;
+    animation-delay: 0.5s;
 }

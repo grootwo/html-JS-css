@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px var(--horizontal-space);
-    margin-top: 0px;
+    top: 20px;
     position: fixed;
     width: 100%;
     background-color: yellow;

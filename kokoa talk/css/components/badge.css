@@ -10,3 +10,12 @@
     font-weight: 600;
     color: white;
 }
+.nav .badge {
+    animation: bounce2 1.8s ease infinite;
+}
+
+@keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-10px);}
+}

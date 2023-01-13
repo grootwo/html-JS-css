@@ -29,3 +29,13 @@
     left: 50px;
     bottom: 15px;
 }
+
+
+@keyframes elastic-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(720deg); }
+}
+
+.screen-header .fa-gear:hover {
+    animation: elastic-spin 2s infinite ease;
+}

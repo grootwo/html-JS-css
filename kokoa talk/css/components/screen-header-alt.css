@@ -8,7 +8,7 @@
     width: 100%;
     background-color: white;
     box-sizing: border-box;
-    z-index: 3;
+    z-index: 2;
 }
 
 .screen-header-alt__column {

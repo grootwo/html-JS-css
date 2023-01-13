@@ -1,6 +1,6 @@
 .user-component {
     display: flex;
-    padding: 10px var(--horizontal-space);
+    padding: 20px var(--horizontal-space);
     justify-content: space-between;
     align-items: center;
 }

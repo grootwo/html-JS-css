@@ -11,6 +11,7 @@
 @import "components/status-bar.css";
 @import "components/icons-row.css";
 @import "components/screen-header-alt.css";
+@import "components/no-mobile-screen.css";
 
 /* screens */
 @import "screens/login.css";

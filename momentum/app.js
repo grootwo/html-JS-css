@@ -1,18 +1,24 @@
-const toDo = ["have fun", "see movie", "eat helth food"];
-console.log(toDo);
+const loginForm = document.querySelector(".login-form");
+const loginInput = document.querySelector(".login-form input");
+const greeting = document.querySelector(".greeting");
 
-toDo.push("sleep");
-console.log(toDo);
+const HIDDEN_CLASS = "hidden"
+const USERNAME_KEY = "username"
 
-const std = {
-    name: "hwido",
-    loving: true,
-    money: "saving",
-};
-console.log(std);
+function handleLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASS);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    savedUsername = username;
+}
 
-std.money = "saved";
-console.log(std);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 
-std.authority = "YEs";
-console.log(std);
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASS);
+    loginForm.addEventListener("submit", handleLoginSubmit);
+} else {
+    greeting.innerText = `Hello ${savedUsername}`;
+    greeting.classList.remove(HIDDEN_CLASS);
+}

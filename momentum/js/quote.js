@@ -1,35 +1,35 @@
 const quotes = [
     {
-        quote: "1",
-        author: "a1"
+        quote: "Champions keep playing until they get it right.",
+        author: "Billie Jean King"
     },
     {
-        quote: "2",
-        author: "a2"
+        quote: "Don't wait for somebody to ask you.",
+        author: "Reese Witherspoon"
     },
     {
-        quote: "3",
-        author: "a3"
+        quote: "Always be a first-rate version of yourself, instead of a second-rate version of somebody else.",
+        author: "Judy Garland"
     },
     {
-        quote: "4",
-        author: "a4"
+        quote: "We must reject not only the stereotypes that others hold of us, but also the stereotypes that we hold of ourselves.",
+        author: "Shirley Chisholm"
     },
     {
-        quote: "5",
-        author: "a5"
+        quote: "Stay strong. Stand up. Have a voice.",
+        author: "Shawn Johnson"
     },
     {
-        quote: "6",
-        author: "a6"
+        quote: "I'd rather regret the risks that didn't work out than the chances I didn't take at all.",
+        author: "Simone Biles"
     },
     {
-        quote: "7",
-        author: "a7"
+        quote: "Make failure your fuel.",
+        author: "Abby Wambach"
     },
     {
-        quote: "8",
-        author: "a8"
+        quote: "살되, 네 생명을 살아라. 생각하되, 네 생각으로 하여라. 알되, 네가 깨달아 알아라.",
+        author: "차미리사"
     },
 ]
 

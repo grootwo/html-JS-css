@@ -5,10 +5,10 @@ function geoSuccess(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     console.log("you're in", latitude, longitude);
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
     fetch(url).then((response) => response.json()).then((data) => {
-        city.innerText = date.name;
-        weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+        city.innerText = data.name;
+        weather.innerText = `${data.weather[0].main} / ${data.main.temp} cel`;
     });
 }
 

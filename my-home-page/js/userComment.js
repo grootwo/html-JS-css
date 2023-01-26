@@ -10,20 +10,20 @@ function userCommentSubmit(event) {
     event.preventDefault();
     const userCommentMessage = userCommentInput.value;
     localStorage.setItem(USER_COMMENT_KEY, userCommentMessage);
-    userCommentSpan.innerText = userCommentMessage;
+    paintUserComment(userCommentMessage);
+    userCommentForm.classList.add(HIDDEN_CLASS);
 }
-// function paintUserComment() {
-//     userCommentSpan.classList.remove(HIDDEN_CLASS);
-//     userCommentSpan.innerText = savedUserComment;
-// }
+function paintUserComment(message) {
+    userCommentSpan.classList.remove(HIDDEN_CLASS);
+    userCommentSpan.innerText = message;
+}
 
 userCommentForm.addEventListener("submit", userCommentSubmit);
 
 const savedUserComment = localStorage.getItem(USER_COMMENT_KEY);
 
 if (savedUserComment !== null) {
-    userCommentSpan.classList.remove(HIDDEN_CLASS);
-    userCommentSpan.innerText = savedUserComment;
+    paintUserComment(savedUserComment);
 } else {
     userCommentForm.classList.remove(HIDDEN_CLASS);
 }

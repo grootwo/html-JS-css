@@ -1,0 +1,10 @@
+.user-comment,
+.my-quote,
+.my-img,
+.now,
+.my-links,
+.todo-list {
+    background-color: white;
+    border: var(--normal-border);
+    border-radius: var(--normal-radius);
+}

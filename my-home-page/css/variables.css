@@ -1,0 +1,8 @@
+:root {
+    --entire-width: 1100px;
+    --entire-height: 700px;
+    --first-layout-height: 80px;
+    --third-layout-height: 280px;
+    --normal-border: 1px solid black;
+    --normal-radius: 10px;
+}

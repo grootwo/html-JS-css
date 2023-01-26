@@ -1,0 +1,42 @@
+@import "variables.css";
+@import "reset.css";
+
+/* components */
+@import "components/layouts.css";
+@import "components/contents.css";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.user-comment {
+    width: var(--entire-width);
+}
+
+.my-quote {
+    width: calc(var(--entire-width) / 2);
+}
+
+.my-img {
+    width: calc(var(--entire-width) / 2);
+}
+
+.now {
+    width: calc(var(--entire-width) / 3);
+}
+
+.my-links {
+    width: calc(var(--entire-width) / 3);
+}
+
+.todo-list {
+    width: calc(var(--entire-width) / 3);
+}

@@ -26,9 +26,9 @@ function onMouseMove(event) {
     }
 }
 
-function lineWidthChange() {
-    console.dir(lineWidth.value);
-    ctx.lineWidth = lineWidth.value;
+function lineWidthChange(event) {
+    console.log(event.target.value);
+    ctx.lineWidth = event.target.value;
 }
 
 canvas.addEventListener("mousemove", onMouseMove);

@@ -1,0 +1,3 @@
+.my-img {
+    width: calc(var(--entire-width) / 2);
+}

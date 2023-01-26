@@ -1,0 +1,3 @@
+.my-links {
+    width: calc(var(--entire-width) / 3);
+}

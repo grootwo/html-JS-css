@@ -3,7 +3,15 @@
 
 /* components */
 @import "components/layouts.css";
-@import "components/contents.css";
+
+/* contents */
+@import "contents/contents.css";
+@import "contents/user-comment.css";
+@import "contents/my-quote.css";
+@import "contents/my-img.css";
+@import "contents/now.css";
+@import "contents/my-links.css";
+@import "contents/todo-list.css";
 
 * {
     box-sizing: border-box;
@@ -15,28 +23,4 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.user-comment {
-    width: var(--entire-width);
-}
-
-.my-quote {
-    width: calc(var(--entire-width) / 2);
-}
-
-.my-img {
-    width: calc(var(--entire-width) / 2);
-}
-
-.now {
-    width: calc(var(--entire-width) / 3);
-}
-
-.my-links {
-    width: calc(var(--entire-width) / 3);
-}
-
-.todo-list {
-    width: calc(var(--entire-width) / 3);
 }

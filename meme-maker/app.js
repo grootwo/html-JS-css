@@ -15,9 +15,8 @@ ctx.fillStyle = "gray";
 ctx.fill();
 
 ctx.beginPath();
-ctx.rect(220, 220, 160, 160);
 ctx.fillStyle = "cornflowerblue";
-ctx.fill();
+ctx.fillRect(220, 220, 160, 160);
 
 ctx.beginPath();
 ctx.moveTo(380, 150);

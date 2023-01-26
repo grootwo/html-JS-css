@@ -1,5 +1,6 @@
 @import "variables.css";
 @import "reset.css";
+@import "for-js.css";
 
 /* components */
 @import "components/layouts.css";

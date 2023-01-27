@@ -20,3 +20,19 @@
 .my-quote .input-form .inputs input {
     width: 100%;
 }
+
+.my-quote__message {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    padding: var(--rl-padding);
+}
+
+.my-quote__quote {
+    height: 80%;
+}
+
+.my-quote__info {
+    height: 20%;
+}

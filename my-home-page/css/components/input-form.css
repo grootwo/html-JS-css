@@ -10,7 +10,7 @@
     width: 70%;
     height: 100%;
     border: inherit;
-    padding: 10px;
+    padding: var(--rl-padding);
 }
 
 .input-form input:focus {

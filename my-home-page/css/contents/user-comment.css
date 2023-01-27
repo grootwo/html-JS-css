@@ -12,7 +12,7 @@
 
 .user-comment__comment {
     height: 100%;
-    padding: 0 10px;
+    padding: 0 var(--rl-padding);
     display: flex;
     align-items: center;
     font-size: 40px;

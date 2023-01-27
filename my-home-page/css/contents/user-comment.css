@@ -2,6 +2,10 @@
     width: var(--entire-width);
 }
 
+.user-comment form {
+    border: none;
+}
+
 .user-comment form input {
     font-size: 40px;
 }

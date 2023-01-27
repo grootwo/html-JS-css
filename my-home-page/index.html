@@ -16,7 +16,7 @@
   <body>
     <div class="first-layout">
       <div class="user-comment">
-        <form class="hidden">
+        <form class="input-form hidden">
           <input
             type="text"
             placeholder="자신만의 홈페이지 이름을 입력하세요!"
@@ -28,7 +28,17 @@
     </div>
 
     <div class="second-layout">
-      <div class="my-quote"></div>
+      <div class="my-quote">
+        <div class="my-quote__message">
+          <span class="my-quote__quote"></span>
+          <span class="my-quote__date"></span>
+        </div>
+        <form class="input-form">
+          <input type="text" />
+          <input type="text" />
+          <button></button>
+        </form>
+      </div>
 
       <div class="my-img"></div>
     </div>
@@ -42,5 +52,6 @@
     </div>
 
     <script src="js/userComment.js"></script>
+    <script src="js/myQuote.js"></script>
   </body>
 </html>

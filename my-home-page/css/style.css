@@ -1,5 +1,6 @@
 /* components */
 @import "components/layouts.css";
+@import "components/input-form.css";
 
 /* contents */
 @import "contents/contents.css";

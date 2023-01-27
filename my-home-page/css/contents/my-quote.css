@@ -31,8 +31,16 @@
 
 .my-quote__quote {
     height: 80%;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 110%;
 }
 
 .my-quote__info {
     height: 20%;
+    font-size: 30px;
+    color: var(--gray);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

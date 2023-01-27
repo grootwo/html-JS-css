@@ -2,3 +2,21 @@
     width: calc(var(--entire-width) / 2);
 }
 
+.my-quote__message {
+    height: 80%;
+    width: 100%;
+}
+
+.my-quote .input-form {
+    height: 20%;
+}
+
+.my-quote .input-form .inputs {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-quote .input-form .inputs input {
+    width: 100%;
+}

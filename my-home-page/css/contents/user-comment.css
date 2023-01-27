@@ -2,6 +2,19 @@
     width: var(--entire-width);
 }
 
+.user-comment form input {
+    font-size: 40px;
+}
+
 .user-comment form input::placeholder {
-    font-size: 30px;
+    font-size: 40px;
+}
+
+.user-comment__comment {
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
 }

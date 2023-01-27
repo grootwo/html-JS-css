@@ -17,8 +17,8 @@ let myQuotes = [
         info: "Reese Witherspoon",
     },
     {
-        quote: "모르고 넘어가는 것이 더 부끄러운 일이다.",
-        info: "그러니 도전하자.",
+        quote: "모르고 넘어가는 게 더 부끄러운 일이다.",
+        info: "그러니 질문하자",
     },
 ];
 

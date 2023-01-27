@@ -7,17 +7,17 @@
 .input-form input {
     display: flex;
     align-items: center;
-    width: 90%;
+    width: 70%;
     height: 100%;
     border: inherit;
 }
 
-.input-form form input:focus {
+.input-form input:focus {
     background-color: var(--gray);
 }
 
-.input-form form button {
-    width: 10%;
+.input-form button {
+    width: 30%;
     height: 100%;
     background-color: black;
     color: white;

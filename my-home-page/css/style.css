@@ -1,3 +1,6 @@
+@import "variables.css";
+@import "reset.css";
+
 /* components */
 @import "components/layouts.css";
 @import "components/input-form.css";
@@ -11,8 +14,6 @@
 @import "contents/my-links.css";
 @import "contents/todo-list.css";
 
-@import "variables.css";
-@import "reset.css";
 @import "for-js.css";
 
 * {

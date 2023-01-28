@@ -40,7 +40,7 @@ function geoSuccess(position) {
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
     fetch(url).then((response) => response.json()).then((data) => {
         city.innerText = data.name;
-        weather.innerText = `${data.main.temp} cel / ${data.weather[0].main}`;
+        weather.innerText = `${data.main.temp} °C / ${data.weather[0].main}`;
     });
 }
 function geoError() {

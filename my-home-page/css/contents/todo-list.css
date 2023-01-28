@@ -1,3 +1,20 @@
 .todo-list {
+    display: flex;
+    flex-direction: column;
     width: calc(var(--entire-width) / 3);
+    height: 100%;
+}
+
+.todo-list .title {
+    padding: var(--rl-padding);
+    height: 20%;
+}
+
+.todo-list__list {
+    height: 65%;
+    overflow-y: scroll;
+}
+
+.todo-list .input-form {
+    height: 15%;
 }

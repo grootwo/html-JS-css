@@ -32,7 +32,26 @@ function setClock() {
     const minute = String(dateObj.getMinutes()).padStart("2", "0");
     clock.innerText = `${hour}:${minute}`;
 }
+function geoSuccess(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    console.log("you're in", latitude, longitude);
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`;
+    fetch(url).then((response) => response.json()).then((data) => {
+        city.innerText = data.name;
+        weather.innerText = `${data.main.temp} cel / ${data.weather[0].main}`;
+    });
+}
+function geoError() {
+    alert("위치 정보를 불러올 수 없습니다.");
+    city.innerText = "지역 정보 없음";
+    weather.innerText = `기온 / 날씨 정보 없음`;
+}
+
+navigator.geolocation.getCurrentPosition(geoSuccess, geoError)
+
 
 setToday();
 setClock();
 setInterval(setClock, 30000);
+

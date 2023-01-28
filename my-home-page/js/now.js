@@ -1,3 +1,4 @@
+const now = document.querySelector(".now");
 const today = document.querySelector(".today");
 const clock = document.querySelector(".clock");
 const weather = document.querySelector(".weather");
@@ -48,10 +49,9 @@ function geoError() {
     weather.innerText = `기온 / 날씨 정보 없음`;
 }
 
-navigator.geolocation.getCurrentPosition(geoSuccess, geoError)
-
-
 setToday();
 setClock();
 setInterval(setClock, 30000);
+navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 
+now.style.background = `linear-gradient(135deg, ${getRandomColor()} 0%, ${getRandomColor()} 100%)`;

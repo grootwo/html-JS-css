@@ -3,8 +3,9 @@ const clock = document.querySelector(".clock");
 const weather = document.querySelector(".weather");
 const city = document.querySelector(".city");
 
+const dateObj = new Date();
+
 function setToday() {
-    const dateObj = new Date();
     const year = String(dateObj.getFullYear());
     const month = String(dateObj.getMonth() + 1).padStart("2", "0");
     const date = String(dateObj.getDate()).padStart("2", "0");
@@ -26,5 +27,12 @@ function setToday() {
     }
     today.innerText = `${year.slice(2, 4)}.${month}.${date}.${day}`;
 }
+function setClock() {
+    const hour = String(dateObj.getHours()).padStart("2", "0");
+    const minute = String(dateObj.getMinutes()).padStart("2", "0");
+    clock.innerText = `${hour}:${minute}`;
+}
 
 setToday();
+setClock();
+setInterval(setClock, 30000);

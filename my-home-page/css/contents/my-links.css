@@ -1,3 +1,33 @@
 .my-links {
     width: calc(var(--entire-width) / 3);
+    display: flex;
+    flex-direction: column;
+}
+
+.my-links .title {
+    padding: var(--rl-padding);
+    height: 20%;
+}
+
+.my-links__list {
+    height: 65%;
+    overflow-y: scroll;
+}
+
+.my-links .input-form {
+    height: 15%;
+}
+
+.my-links .input-form .inputs {
+    width: 70%;
+    display: flex;
+}
+
+.my-links .input-form .inputs input:first-child {
+    width: 10%;
+    padding: 0;
+}
+
+.my-links .input-form .inputs input:last-child {
+    width: 90%;
 }

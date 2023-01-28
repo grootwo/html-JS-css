@@ -25,8 +25,8 @@ function showNewTodo(newTodo) {
     const todoLi = document.createElement("li");
     todoLi.className = "todo";
     todoLi.id = newTodo.id;
-    todoLi.appendChild(todoSpan);
     todoLi.appendChild(todoBtn);
+    todoLi.appendChild(todoSpan);
     todoList.appendChild(todoLi);
 }
 function saveTodos() {

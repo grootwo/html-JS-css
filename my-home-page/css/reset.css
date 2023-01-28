@@ -50,6 +50,7 @@ table {
 button {
 	color: inherit;
 	border: none;
+	background-color: inherit;
 }
 input:focus {
 	outline: none;

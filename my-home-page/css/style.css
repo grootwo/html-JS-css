@@ -27,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 720px;
+    overflow-x: scroll;
 }
 
 .title {

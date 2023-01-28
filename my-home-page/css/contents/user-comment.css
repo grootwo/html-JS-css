@@ -18,7 +18,9 @@
     height: 100%;
     padding: 0 var(--rl-padding);
     display: flex;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 40px;
     font-weight: 600;
 }

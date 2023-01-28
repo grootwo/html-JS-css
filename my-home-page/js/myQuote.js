@@ -50,20 +50,7 @@ quoteForm.addEventListener("submit", quoteSubmit);
 
 loadQuotes();
 if (myQuotes === null) {
-    myQuotes = [
-        {
-            quote: "일찍, 많이 실패하자!",
-            info: "23.01.27.금",
-        },
-        {
-            quote: "Don't wait for somebody to ask you.",
-            info: "Reese Witherspoon",
-        },
-        {
-            quote: "모르고 넘어가는 게 더 부끄러운 일이다.",
-            info: "그러니 질문하자",
-        },
-    ];
+    myQuotes = [];
     saveQuotes();
     paintQuote();
 } else {

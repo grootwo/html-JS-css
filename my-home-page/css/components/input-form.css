@@ -2,8 +2,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
 }
 
 .input-form input {
@@ -11,7 +9,7 @@
     align-items: center;
     width: 70%;
     height: 100%;
-    border: inherit;
+    border: none;
     padding: var(--rl-padding);
 }
 
@@ -24,4 +22,6 @@
     height: 100%;
     background-color: black;
     color: white;
+    border-top-right-radius: var(--normal-radius);
+    border-bottom-right-radius: var(--normal-radius);
 }

@@ -28,3 +28,7 @@ body {
     align-items: center;
     height: 720px;
 }
+
+.title {
+    font-size: 30px;
+}

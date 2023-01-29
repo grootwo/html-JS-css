@@ -19,15 +19,12 @@
 }
 
 .my-links .input-form .inputs {
-    width: 70%;
+    width: var(--input-width);
     display: flex;
+    flex-direction: column;
 }
 
-.my-links .input-form .inputs input:first-child {
-    width: 10%;
-    padding: 0;
-}
-
-.my-links .input-form .inputs input:last-child {
-    width: 90%;
+.my-links .input-form .inputs input {
+    width: 100%;
+    height: 50%;
 }

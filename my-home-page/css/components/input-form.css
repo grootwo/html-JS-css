@@ -2,13 +2,13 @@
     width: 100%;
     height: 100%;
     display: flex;
-    border-radius: var(--normal-radius);
+    border-top: 1px solid black;
 }
 
 .input-form input {
     display: flex;
     align-items: center;
-    width: 70%;
+    width: var(--input-width);
     height: 100%;
     border: none;
     padding: var(--rl-padding);
@@ -19,7 +19,7 @@
 }
 
 .input-form button {
-    width: 30%;
+    width: var(--btn-width);
     height: 100%;
     background-color: black;
     color: white;

@@ -1,5 +1,9 @@
 const myImg = document.querySelector(".my-img");
 const myImgImg = myImg.querySelector("img");
+const myImgForm = myImg.querySelector(".input-form");
+const myImgInput = myImgForm.querySelector("input");
+
+const IMGS_KEY = "myImgs";
 
 let myImgs = [
     "https://blog.kakaocdn.net/dn/ccW5UN/btrbWd3iYGl/xyD0biW4EXeSfltdKu2lv0/img.jpg",
@@ -10,6 +14,7 @@ let chosenImg;
 let chosenImgIndex;
 
 function setRandomImg() {
+    loadImgs();
     if (myImgs.length !== 0) {
         chosenImg = myImgs[Math.floor(Math.random() * myImgs.length)];
         chosenImgIndex =  myImgs.indexOf(chosenImg);
@@ -19,5 +24,20 @@ function setRandomImg() {
         myImgImg.src = "https://img.freepik.com/premium-vector/checkered-geometric-vector-background-with-black-gray-tile-transparent-grid-empty-layer_501045-1220.jpg?w=2000";
     }
 }
+function submitImg(event) {
+    event.preventDefault();
+    const newImg = myImgInput.value;
+    myImgInput.value = "";
+    myImgs.push(newImg);
+    saveImgs();
+}
+function saveImgs() {
+    localStorage.setItem(IMGS_KEY, JSON.stringify(myImgs));
+}
+function loadImgs() {
+    myImgs = JSON.parse(localStorage.getItem(IMGS_KEY));
+}
+
+myImgForm.addEventListener("submit", submitImg);
 
 setRandomImg();

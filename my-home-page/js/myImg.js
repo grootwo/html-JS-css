@@ -9,9 +9,7 @@ const myImgRightBtn = document.querySelector(".my-img__btns button:nth-child(3)"
 const IMGS_KEY = "myImgs";
 
 let myImgs = [
-    "https://blog.kakaocdn.net/dn/ccW5UN/btrbWd3iYGl/xyD0biW4EXeSfltdKu2lv0/img.jpg",
-    "https://blog.kakaocdn.net/dn/cSZ5WZ/btrb1q8qzPs/X78yP3xYFgGC6IiITxp1KK/img.jpg",
-    "https://blog.kakaocdn.net/dn/INMNW/btrh5Yd46QG/2hcojqZe0D118hKUlDxnfk/img.jpg",
+    "https://cdn.pixabay.com/photo/2017/12/27/14/18/july-pass-3042793_1280.jpg",
 ];
 let chosenImg;
 

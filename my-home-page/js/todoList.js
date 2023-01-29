@@ -20,7 +20,10 @@ function showNewTodo(newTodo) {
     const todoSpan = document.createElement("span");
     todoSpan.innerText = newTodo.text;
     const todoBtn = document.createElement("Button");
-    todoBtn.innerText = "✖️";
+    const todoBtnIcon = document.createElement("i");
+    todoBtnIcon.classList.add("fa-solid");
+    todoBtnIcon.classList.add("fa-xmark");
+    todoBtn.appendChild(todoBtnIcon);
     todoBtn.addEventListener("click", deleteTodo);
     const todoLi = document.createElement("li");
     todoLi.className = "todo";
@@ -33,7 +36,8 @@ function saveTodos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 function deleteTodo(event) {
-    const selectedLi = event.target.parentElement;
+    const selectedBtn = event.target.parentElement;
+    const selectedLi = selectedBtn.parentElement;
     selectedLi.remove();
     todos = todos.filter(item => {
         return item.id !== parseInt(selectedLi.id)

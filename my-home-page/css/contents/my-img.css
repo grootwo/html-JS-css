@@ -29,6 +29,8 @@
 .my-img img {
     width: 100%;
     height: 85%;
+    border-top-left-radius: var(--normal-radius);
+    border-top-right-radius: var(--normal-radius);
     object-fit: contain;
 }
 

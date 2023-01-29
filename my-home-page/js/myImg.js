@@ -19,7 +19,6 @@ function setRandomImg() {
     loadImgs();
     if (myImgs.length !== 0) {
         chosenImg = myImgs[Math.floor(Math.random() * myImgs.length)];
-        console.log(chosenImg, myImgs.indexOf(chosenImg));
         myImgImg.src = chosenImg;
     } else {
         myImgImg.src = "https://img.freepik.com/premium-vector/checkered-geometric-vector-background-with-black-gray-tile-transparent-grid-empty-layer_501045-1220.jpg?w=2000";
@@ -39,7 +38,6 @@ function loadImgs() {
     myImgs = JSON.parse(localStorage.getItem(IMGS_KEY));
 }
 function deleteImg() {
-    console.log("delete");
     myImgs = myImgs.filter(item => {
         return item !== chosenImg
     })
@@ -47,7 +45,6 @@ function deleteImg() {
     setRandomImg();
 }
 function getLeftImg() {
-    console.log("left");
     if (myImgs.indexOf(chosenImg) !== 0) {
         chosenImg = myImgs[myImgs.indexOf(chosenImg) - 1];
     } else {
@@ -56,7 +53,6 @@ function getLeftImg() {
     myImgImg.src = chosenImg;
 }
 function getRightImg() {
-    console.log("right");
     if (myImgs.indexOf(chosenImg) !== (myImgs.length - 1)) {
         chosenImg = myImgs[myImgs.indexOf(chosenImg) + 1];
     } else {

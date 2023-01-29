@@ -3,7 +3,13 @@ const linkForm = document.querySelector(".my-links .input-form");
 const linkInput = linkForm.querySelector("input:first-child");
 const linkNameInput = linkForm.querySelector("input:last-child");
 
-let links = [];
+let links = [
+    {
+        a: "https://www.google.com/",
+        name: "google",
+        id: Date.now(),
+    }
+];
 const LINKS_KEY = "links";
 
 function addNewLink(event) {

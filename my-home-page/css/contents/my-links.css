@@ -12,7 +12,27 @@
 .my-links__list {
     height: 65%;
     overflow-y: scroll;
-    padding: 0 calc(var(--rl-padding) + 10px);
+}
+
+.my-links__list li {
+    font-size: 20px;
+    padding: 10px calc(var(--rl-padding) + 10px);
+    display: flex;
+    align-items: center;
+    transition: var(--normal-transition);
+}
+
+.my-links__list li:hover {
+    background-color: var(--gray);
+}
+
+.my-links__list button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    background-color: none;
+    font-size: 20px;
 }
 
 .my-links .input-form {

@@ -80,6 +80,8 @@ function onModeClick() {
 function onDestroyClick() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+    isFilling = false;
+    modeBtn.innerText = "Fill";
 }
 
 function onEraseClick() {

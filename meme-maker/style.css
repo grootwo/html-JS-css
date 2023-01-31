@@ -10,3 +10,8 @@ canvas {
     width: 600px;
     border: 1px solid salmon;
 }
+
+.color-option {
+    height: 20px;
+    width: 20px;
+}

@@ -4,9 +4,14 @@ const lineWidth = document.querySelector(".line-width");
 const color = document.querySelector(".color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
 const modeBtn = document.querySelector(".mode-btn");
+const destroyBtn = document.querySelector(".destroy-btn");
+const eraseBtn = document.querySelector(".erase-btn");
 
-canvas.width = 600;
-canvas.height = 600;
+const canvasWidth = 600;
+const canvasHeight = 600;
+
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
 ctx.lineWidth = lineWidth.value;
 
 let isPainting = false;
@@ -32,7 +37,7 @@ function onMouseMove(event) {
 
 function onCanvasClick() {
     if (isFilling) {
-        ctx.fillRect(0, 0, 600, 600);
+        ctx.fillRect(0, 0, canvasWidth, canvasWidth);
     }
 }
 
@@ -52,7 +57,7 @@ function onColorClick(event) {
     ctx.fillStyle = chosenColor;
 }
 
-function onChangeMode() {
+function onModeClick() {
     // 왜 이게 불필요한지 알아야 함
     // if (isPainting) {
     //     isPainting = false;
@@ -72,6 +77,17 @@ function onChangeMode() {
     }
 }
 
+function onDestroyClick() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+}
+
+function onEraseClick() {
+    ctx.strokeStyle = "white";
+    isFilling = false;
+    modeBtn.innerText = "Fill";
+}
+
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mousedown", startPainting);
@@ -82,4 +98,6 @@ color.addEventListener("change", onColorChange);
 colorOptions.forEach(item => {
     item.addEventListener("click", onColorClick);
 })
-modeBtn.addEventListener("click", onChangeMode);
+modeBtn.addEventListener("click", onModeClick);
+destroyBtn.addEventListener("click", onDestroyClick);
+eraseBtn.addEventListener("click", onEraseClick);

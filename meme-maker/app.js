@@ -106,14 +106,14 @@ function onImgChange(event) {
 }
 
 function onCanvasDbclick(event) {
-    ctx.save();
     const text = textInput.value;
     if (text !== "") {
+        ctx.save();
         ctx.lineWidth = 1;
         ctx.font = "50px serif";
         ctx.fillText(text, event.offsetX, event.offsetY);
+        ctx.restore();
     }
-    ctx.restore();
 }
 
 function onDownloadeClick() {

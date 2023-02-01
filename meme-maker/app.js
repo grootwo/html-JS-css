@@ -7,6 +7,7 @@ const modeBtn = document.querySelector(".mode-btn");
 const destroyBtn = document.querySelector(".destroy-btn");
 const eraseBtn = document.querySelector(".erase-btn");
 const imgInput = document.querySelector(".img-input");
+const textInput = document.querySelector(".text-input");
 
 const canvasWidth = 600;
 const canvasHeight = 600;
@@ -103,11 +104,23 @@ function onImgChange(event) {
     }
 }
 
+function onCanvasDbclick(event) {
+    ctx.save();
+    const text = textInput.value;
+    if (text !== "") {
+        ctx.lineWidth = 1;
+        ctx.font = "50px serif";
+        ctx.fillText(text, event.offsetX, event.offsetY);
+    }
+    ctx.restore();
+}
+
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
 canvas.addEventListener("click", onCanvasClick);
+canvas.addEventListener("dblclick", onCanvasDbclick);
 lineWidth.addEventListener("change", lineWidthChange);
 color.addEventListener("change", onColorChange);
 colorOptions.forEach(item => {

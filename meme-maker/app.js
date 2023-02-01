@@ -14,6 +14,7 @@ const canvasHeight = 600;
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 ctx.lineWidth = lineWidth.value;
+ctx.lineCap = "round";
 
 let isPainting = false;
 let isFilling = false;

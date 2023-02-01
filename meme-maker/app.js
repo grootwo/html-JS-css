@@ -8,6 +8,7 @@ const destroyBtn = document.querySelector(".destroy-btn");
 const eraseBtn = document.querySelector(".erase-btn");
 const imgInput = document.querySelector(".img-input");
 const textInput = document.querySelector(".text-input");
+const downloadBtn = document.querySelector(".download-btn");
 
 const canvasWidth = 600;
 const canvasHeight = 600;
@@ -115,6 +116,14 @@ function onCanvasDbclick(event) {
     ctx.restore();
 }
 
+function onDownloadeClick() {
+    const url = canvas.toDataURL();
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "myDrawing.png";
+    a.click();
+}
+
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mousedown", startPainting);
@@ -130,3 +139,4 @@ modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onDestroyClick);
 eraseBtn.addEventListener("click", onEraseClick);
 imgInput.addEventListener("change", onImgChange);
+downloadBtn.addEventListener("click", onDownloadeClick);

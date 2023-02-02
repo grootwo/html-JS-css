@@ -20,7 +20,7 @@
     />
     <input class="color" type="color" />
 
-    <div>
+    <div class="colors">
       <div
         class="color-option"
         style="background-color: #ecf0f1"
@@ -58,16 +58,21 @@
       ></div>
     </div>
 
-    <button class="mode-btn">Fill</button>
-    <button class="destroy-btn">Destroy</button>
-    <button class="erase-btn">Erase</button>
-    <input class="img-input" type="file" accept="image/*" />
-    <input
-      class="text-input"
-      type="text"
-      placeholder="Write and double click"
-    />
-    <button class="download-btn">Download</button>
+    <div class="btns">
+      <button class="mode-btn">Fill</button>
+      <button class="destroy-btn">Destroy</button>
+      <button class="erase-btn">Erase</button>
+      <label for="img-input">
+        Add photo
+        <input id="img-input" type="file" accept="image/*" />
+      </label>
+      <input
+        class="text-input"
+        type="text"
+        placeholder="Write and double click"
+      />
+      <button class="download-btn">Download</button>
+    </div>
 
     <script src="app.js"></script>
   </body>

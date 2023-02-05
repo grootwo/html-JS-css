@@ -1,3 +1,39 @@
+.tools {
+    width: 20%;
+}
+
+.tools__line,
+.tools__color,
+.tools__mode,
+.tools__img,
+.tools__text,
+.tools__download {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.colors {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.color-option,
+.color {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
 /********** Range Input Styles **********/
 /*Range Reset*/
 input[type="range"] {
@@ -5,7 +41,7 @@ input[type="range"] {
     appearance: none;
     background: transparent;
     cursor: pointer;
-    width: 15rem;
+    width: 100%;
 }
 
  /* Removes default focus */
@@ -18,7 +54,7 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-runnable-track {
     background-color: var(--gray);
     border-radius: 0.5rem;
-    height: 0.5rem;  
+    height: 0.5rem;
 }
 
  /* slider thumb */

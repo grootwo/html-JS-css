@@ -7,7 +7,7 @@ const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 const modeBtn = document.querySelector(".mode-btn");
 const destroyBtn = document.querySelector(".destroy-btn");
 const eraseBtn = document.querySelector(".erase-btn");
-const imgInput = document.querySelector(".img-input");
+const imgInput = document.querySelector("#img-input");
 const textInput = document.querySelector(".text-input");
 const downloadBtn = document.querySelector(".download-btn");
 

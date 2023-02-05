@@ -1,0 +1,5 @@
+canvas {
+    height: 600px;
+    width: 600px;
+    border: var(--normal-border) solid var(--green);
+}

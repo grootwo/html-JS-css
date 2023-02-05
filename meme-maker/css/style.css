@@ -1,0 +1,13 @@
+@import "tools.css";
+
+:root {
+    --green: forestgreen;
+    --normal-border: 5px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

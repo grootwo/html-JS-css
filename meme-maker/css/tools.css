@@ -12,11 +12,11 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 40px 0;
+    margin: 37px 0;
 }
 
 .title {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 800;
     color: var(--green);
     margin-bottom: 20px;
@@ -77,6 +77,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.inputs {
+    width: 100%;
+}
+
+.text-input {
+    width: 100%;
+    border: none;
+    background-color: var(--gray);
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.text-input::placeholder {
+    padding: 5px;
+    color: var(--green);
+}
+
+.download-btn {
+    width: 100%;
+    background-color: var(--green);
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
 }
 
 /********** Range Input Styles **********/

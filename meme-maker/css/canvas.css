@@ -2,4 +2,6 @@ canvas {
     height: 600px;
     width: 600px;
     border: var(--normal-border) solid var(--green);
+    border-radius: 20px;
+    margin-right: 30px;
 }

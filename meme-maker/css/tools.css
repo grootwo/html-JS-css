@@ -90,10 +90,14 @@
     height: 30px;
     border-radius: 10px;
     margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.text-input:focus {
+    outline: none;
 }
 
 .text-input::placeholder {
-    padding: 5px;
     color: var(--green);
 }
 

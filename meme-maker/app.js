@@ -74,25 +74,26 @@ function onModeClick() {
     //     modeBtn.innerText = "Fill";
     // }
     if (isFilling) {
-        isFilling = false;
-        modeBtn.innerText = "Fill";
+        makeDrawMode();
     } else {
         isFilling = true;
-        modeBtn.innerText = "Draw";
+        const DrawIcon = document.createElement("i");
+        DrawIcon.classList.add("fa-solid");
+        DrawIcon.classList.add("fa-pen");
+        modeBtn.removeChild(modeBtn.firstElementChild);
+        modeBtn.appendChild(DrawIcon);
     }
 }
 
 function onDestroyClick() {
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-    isFilling = false;
-    modeBtn.innerText = "Fill";
+    makeDrawMode();
 }
 
 function onEraseClick() {
     ctx.strokeStyle = "white";
-    isFilling = false;
-    modeBtn.innerText = "Fill";
+    makeDrawMode();
 }
 
 function onImgChange(event) {
@@ -126,6 +127,17 @@ function onDownloadeClick() {
     a.download = "myDrawing.png";
     a.click();
 }
+
+function makeDrawMode() {
+    isFilling = false;
+    const fillIcon = document.createElement("i");
+    fillIcon.classList.add("fa-solid");
+    fillIcon.classList.add("fa-fill-drip");
+    modeBtn.removeChild(modeBtn.firstElementChild);
+    modeBtn.appendChild(fillIcon);
+}
+
+
 
 canvas.addEventListener("mousemove", onMouseMove);
 canvas.addEventListener("mouseup", cancelPainting);

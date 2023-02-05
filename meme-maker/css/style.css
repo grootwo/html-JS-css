@@ -4,6 +4,7 @@
 :root {
     --green: forestgreen;
     --normal-border: 5px;
+    --gray: rgba(0, 0, 0, 0.1);
 }
 
 body {

@@ -34,6 +34,25 @@
     border-radius: 50%;
 }
 
+.mode-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mode-btns button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    font-size: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: var(--green);
+    background-color: var(--gray);
+}
+
 /********** Range Input Styles **********/
 /*Range Reset*/
 input[type="range"] {

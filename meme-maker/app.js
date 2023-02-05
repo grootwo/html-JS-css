@@ -1,6 +1,7 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const lineWidth = document.querySelector(".line-width");
+const fontSize = document.querySelector(".font-size");
 const color = document.querySelector(".color");
 const colorOptions = Array.from(document.getElementsByClassName("color-option"));
 const modeBtn = document.querySelector(".mode-btn");
@@ -107,10 +108,12 @@ function onImgChange(event) {
 
 function onCanvasDbclick(event) {
     const text = textInput.value;
+    const size = fontSize.value;
     if (text !== "") {
+        console.log(size);
         ctx.save();
         ctx.lineWidth = 1;
-        ctx.font = "50px serif";
+        ctx.font = `${size}px serif`;
         ctx.fillText(text, event.offsetX, event.offsetY);
         ctx.restore();
     }

@@ -17,7 +17,15 @@ https://soaringwave.github.io/html-JS-css/kokoa-talk/
 <br>
 <br>
 
-## 기능 소개
+## 화면 구성
 <img src="https://user-images.githubusercontent.com/82134672/226289428-a36a2672-c7e5-4bf6-969d-3e10409fc9aa.png" width="400">
 <img src="https://user-images.githubusercontent.com/82134672/226289443-2723f3bb-a00e-47d3-967a-fd237e935074.png" width="400">
 <img src="https://user-images.githubusercontent.com/82134672/226289452-0ed3b909-9547-4948-b3f0-6821429f77a2.png" width="400">
+<img src="https://user-images.githubusercontent.com/82134672/226289428-a36a2672-c7e5-4bf6-969d-3e10409fc9aa.png" width="400">
+<br>
+<br>
+
+## 기능
+* 기본적인 레이아웃 구성
+* 아이콘 클릭으로 페이지 간 이동
+* 알림, 채팅 표시 등 애니메이션 설정

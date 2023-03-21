@@ -7,4 +7,9 @@ HTML, JS, CSS를 공부하며 만든 작품들을 모아둔 repo입니다.
 <br>
 <br>  
 ## 목록
-* 
+* /conic-gradient: 랜덤, 지정색으로 conic-gradient를 만들어 화면에 보이는 페이지
+* /converter: min &rarr; hr & lb &rarr; kg 환산기, React 공부
+* /kokoa-talk: 카카오톡 앱 클론 코딩, HTML & CSS 공부
+* /meme-maker: 그림판, HTML & CSS & JS canvas 기능 공부
+* /momentum: 크롬 앱 클론 코딩, HTML & CSS & JS 공부
+* /

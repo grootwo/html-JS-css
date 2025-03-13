@@ -1,3 +1,4 @@
+<!-- 과제: 2-2 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구조 요소</title>
     <style>
+        .group {
+            width: 100%;
+            background-color: cornsilk;
+            margin: 12px;
+        }
+
+        h1,
+        li,
+        section,
+        article,
+        aside,
+        address,
+        p {
+            background-color: antiquewhite;
+            padding: 12px;
+            margin: 8px;
+            height: max-content
+        }
+
+        h1,
+        nav,
+        li,
+        section,
+        div {
+            display: inline-block;
+        }
+
+        section {
+            height: 100px;
+        }
     </style>
 </head>
-<header>
+
+<header class="group">
     <h1 id="inline-block">반응형웹</h1>
     <nav id="inline-block">
         <ul>
@@ -21,14 +53,17 @@
 </header>
 
 <body>
-    <div>
+    <div class="group">
         <section>콘텐츠그룹1</section>
         <section>콘텐츠그룹2</section>
-        <article>주요기사</article>
-        <aside>광고</aside>
+        <div id="inline-block">
+            <article>주요기사</article>
+            <aside>광고</aside>
+        </div>
     </div>
 </body>
-<footer>
+
+<footer class="group">
     <address>경남 밀양시.....</address>
     <p>부산대학교</p>
 </footer>

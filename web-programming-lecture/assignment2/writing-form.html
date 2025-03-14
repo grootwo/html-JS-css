@@ -7,35 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>글 작성하기 페이지</title>
     <style>
-        label {
-            margin-top: 10px;
-        }
     </style>
 </head>
 
 <body>
     <h1>글 작성하기</h1>
     <form>
-        <label>작성자<input type="text"></label><br>
-        <label>이메일<input type="email"></label><br>
-        <label>이메일<input type="text"></label><label>@<input type="text"></label><br>
-        <label>휴대폰
-            <select>
-                <option>010</option>
-                <option>011</option>
-                <option>016</option>
-                <option>017</option>
-                <option>018</option>
-                <option>019</option>
-            </select>
-        </label>
-        <label>-<input type="number"></label>
-        <label>-<input type="number"></label><br>
-        <label>글제목<input type="text"></label><br>
-        <label>내용
-            <textarea cols="25" rows="7"></textarea>
-        </label><br>
-        <button type="submit">제출</button>
+        <table>
+            <tr>
+                <td>작성자</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text">@<input type="text"></td>
+            </tr>
+            <tr>
+                <td>휴대폰</td>
+                <td>
+                    <select>
+                        <option>010</option>
+                        <option>011</option>
+                        <option>016</option>
+                        <option>017</option>
+                        <option>018</option>
+                        <option>019</option>
+                    </select>
+                    -<input type="number">-<input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>글제목</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">내용</td>
+                <td><textarea cols="25" rows="7"></textarea></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">제출</button>
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 

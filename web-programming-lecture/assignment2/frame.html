@@ -7,54 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구조 요소</title>
     <style>
-        /* .group {
-            background-color: cornsilk;
-            margin: 12px;
-            border: solid lightblue;
-            display: flex;
-            align-items: center;
-        }
-
-        footer {
-            display: grid;
-        }
-
-        h1,
-        li,
-        section,
-        article,
-        aside,
-        address,
-        p {
-            background-color: lightskyblue;
-            padding: 12px;
-            margin: 8px;
-            height: max-content;
-        }
-
-        h1,
-        nav,
-        li,
-        section,
-        div {
-            display: inline-block;
-        }
-
-        section {
-            height: 70px;
-        }
-
-        footer {
-            display: none;
-            align-items: normal;
-        } */
-
-        .group {
+        .group1 {
             margin: 20px;
             padding: 10px;
             border: 1px solid black;
+            color: white;
             display: flex;
             align-items: stretch;
+        }
+
+        .group2 {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid black;
             color: white;
         }
 
@@ -81,8 +46,7 @@
         }
 
         footer {
-            height: 100px;
-            display: block;
+            height: 120px;
         }
 
         h1,
@@ -95,7 +59,7 @@
     </style>
 </head>
 
-<header class="group">
+<header class="group1">
     <h1 id="content">반응형웹</h1>
     <nav id="content">
         <ul>
@@ -108,7 +72,7 @@
 </header>
 
 <body>
-    <div class="group">
+    <div class="group1">
         <section id="content">콘텐츠그룹1</section>
         <section id="content">콘텐츠그룹2</section>
         <div id="side-contents">
@@ -118,7 +82,7 @@
     </div>
 </body>
 
-<footer class="group">
+<footer class="group2">
     <address id="content">경남 밀양시.....</address>
     <p id="content">부산대학교</p>
 </footer>

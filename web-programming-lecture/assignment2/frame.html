@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구조 요소</title>
     <style>
-        .group {
+        /* .group {
             background-color: cornsilk;
             margin: 12px;
             border: solid lightblue;
@@ -47,13 +47,57 @@
         footer {
             display: none;
             align-items: normal;
+        } */
+
+        .group {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            display: flex;
+            align-items: stretch;
+            color: white;
+        }
+
+        #content {
+            background-color: cornflowerblue;
+            border: 1px solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 10px
+        }
+
+        header {
+            height: 100px;
+        }
+
+        #side-contents {
+            height: 300px;
+            align-items: stretch;
+        }
+
+        footer {
+            height: 100px;
+            display: block;
+        }
+
+        h1,
+        nav,
+        li,
+        section,
+        div {
+            display: inline-block;
         }
     </style>
 </head>
 
 <header class="group">
-    <h1 id="inline-block">반응형웹</h1>
-    <nav id="inline-block">
+    <h1 id="content">반응형웹</h1>
+    <nav id="content">
         <ul>
             <li>MENU1</li>
             <li>MENU2</li>
@@ -65,18 +109,18 @@
 
 <body>
     <div class="group">
-        <section>콘텐츠그룹1</section>
-        <section>콘텐츠그룹2</section>
-        <div id="inline-block">
-            <article>주요기사</article>
-            <aside>광고</aside>
+        <section id="content">콘텐츠그룹1</section>
+        <section id="content">콘텐츠그룹2</section>
+        <div id="side-contents">
+            <article id="content">주요기사</article>
+            <aside id="content">광고</aside>
         </div>
     </div>
 </body>
 
 <footer class="group">
-    <address>경남 밀양시.....</address>
-    <p>부산대학교</p>
+    <address id="content">경남 밀양시.....</address>
+    <p id="content">부산대학교</p>
 </footer>
 
 </html>

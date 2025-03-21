@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Float With Overflow</title>
+    <style>
+        div.container {
+            /* overflow는 해당 콘텐츠 옆에 남는 공간에 다음 콘텐츠가 채워짐 */
+            /* overflow: hidden; */
+        }
+
+        div.item {
+            float: left;
+            margin: 0 3px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        div.clear {
+            /* overflow 대신 사용 가능 */
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+    <div class="container">
+        <div class="item">메뉴 - 1</div>
+        <div class="item">메뉴 - 2</div>
+        <div class="item">메뉴 - 3</div>
+        <div class="item">메뉴 - 4</div>
+    </div>
+    <div class="clear"></div>
+    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+</body>
+
+</html>

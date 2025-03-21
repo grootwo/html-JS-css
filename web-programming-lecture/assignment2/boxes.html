@@ -4,22 +4,40 @@
 <head>
     <title>Ellipsis</title>
     <style>
-        h1,
-        p {
-            width: 300px;
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
         }
 
-        .ellipsis {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .box:nth-child(1) {
+            background-color: red;
+            left: 20px;
+            top: 20px;
+        }
+
+        .box:nth-child(2) {
+            background-color: green;
+            left: 40px;
+            top: 40px;
+        }
+
+        .box:nth-child(3) {
+            background-color: blue;
+            left: 60px;
+            top: 60px;
         }
     </style>
 </head>
 
 <body>
-    <h1 class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-    <p class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <h1>Lorem ipsum dolor sit amet</h1>
 </body>
 
 </html>

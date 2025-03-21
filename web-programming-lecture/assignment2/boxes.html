@@ -2,54 +2,57 @@
 <html>
 
 <head>
-    <title>One True Layout</title>
+    <title>Absolute Position</title>
     <style>
-        body {
+        #container {
+            border: 3px solid black;
             width: 500px;
-            margin: 0 auto;
+            height: 400px;
+            position: relative;
         }
 
-        #left {
-            float: left;
-            width: 150px;
-            background-color: red;
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50% 50%;
         }
 
-        #right {
-            float: right;
-            width: 350px;
-            background: blue;
+        #red {
+            background: red;
+            left: 20px;
+            top: 20px;
         }
 
-        #middle {
-            /* overflow: hidden; */
-        }
-
-        #top {
+        #green {
             background: green;
+            right: 20px;
+            top: 20px;
         }
 
-        #bottom {
-            background: purple;
+        #blue {
+            background: blue;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        #yellow {
+            background: yellow;
+            left: 20px;
+            bottom: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div id="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum ut,
-        imperdiet nec felis. Proin leo felis, congue vitae facilisis id, ullamcorper vitae ipsum.</div>
-    <div id="middle">
-        <div id="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum
-            ut.</div>
-        <div id="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum
-            ut, imperdiet nec felis. Proin leo felis, congue vitae facilisis id, ullamcorper vitae ipsum. Integer a
-            risus sed libero imperdiet lacinia vel vel massa. Vestibulum tempus ullamcorper tellus vitae gravida. Donec
-            cursus, enim at porta auctor, purus sapien luctus erat, vitae placerat ante nibh eget lectus. Integer a leo
-            sit amet neque suscipit commodo sed et mauris. Nullam a turpis nunc. Ut metus risus, scelerisque ac
-            dignissim non, faucibus ac metus.</div>
+    <h1>Dummy Text</h1>
+    <div id="container">
+        <div id="red" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <div id="yellow" class="circle"></div>
     </div>
-    <div id="bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum
-        ut, imperdiet nec felis. Proin leo felis, congue vitae facilisis id, ullamcorper vitae ipsum.</div>
+    <h1>Dummy Text</h1>
 </body>
 
 </html>

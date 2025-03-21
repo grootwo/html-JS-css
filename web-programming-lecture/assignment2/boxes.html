@@ -2,39 +2,54 @@
 <html>
 
 <head>
-    <title>Margin Width</title>
+    <title>One True Layout</title>
     <style>
-        /* 초기화 */
-        * {
-            margin: 0;
-            padding: 0;
+        body {
+            width: 500px;
+            margin: 0 auto;
         }
 
-        /* 주제 */
-        body {
-            /* 콘텐츠의 상하 간격을 0, 좌우 정렬은 자동으로 */
-            margin: 0 auto;
-            width: 400px;
+        #left {
+            float: left;
+            width: 150px;
+            background-color: red;
+        }
+
+        #right {
+            float: right;
+            width: 350px;
+            background: blue;
+        }
+
+        #middle {
+            overflow: hidden;
+        }
+
+        #top {
+            background: green;
+        }
+
+        #bottom {
+            background: purple;
         }
     </style>
 </head>
 
 <body>
-    <h1>Lorem ipsum</h1>
-    <h2>Neque porro quisquam est qui...</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat vehicula erat vel hendrerit. Etiam in
-        est dolor, non pretium justo. Aliquam eu ipsum diam, sed dictum ante. Nunc pellentesque semper cursus. Nam
-        aliquet consequat sapien id porttitor. Proin quis pharetra urna. Nam risus arcu, tincidunt quis imperdiet in,
-        ullamcorper in sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        Curabitur vestibulum enim gravida sapien vehicula id consectetur ipsum gravida. Nulla porta consequat velit
-        vitae elementum.</p>
-    <p>Nullam neque quam, blandit eget venenatis at, viverra vitae metus. Pellentesque quis ligula turpis. Nulla at
-        justo est, id egestas mauris. Phasellus nec nunc egestas magna iaculis rhoncus. Praesent ut risus tellus. Ut
-        pretium hendrerit vehicula. Donec id felis quis neque ornare facilisis. Praesent dictum orci quis metus
-        vestibulum vitae vulputate sapien luctus. Aliquam pellentesque urna id nunc aliquam aliquam quis sed nunc. Sed
-        rhoncus accumsan dolor, ut interdum quam ultricies in. Morbi venenatis nisi a nunc porta tempus. Vestibulum
-        hendrerit posuere consequat. Nam eleifend malesuada est at dictum. Mauris sit amet nisi lobortis dolor consequat
-        ullamcorper.</p>
+    <div id="top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum ut,
+        imperdiet nec felis. Proin leo felis, congue vitae facilisis id, ullamcorper vitae ipsum.</div>
+    <div id="middle">
+        <div id="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum
+            ut.</div>
+        <div id="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum
+            ut, imperdiet nec felis. Proin leo felis, congue vitae facilisis id, ullamcorper vitae ipsum. Integer a
+            risus sed libero imperdiet lacinia vel vel massa. Vestibulum tempus ullamcorper tellus vitae gravida. Donec
+            cursus, enim at porta auctor, purus sapien luctus erat, vitae placerat ante nibh eget lectus. Integer a leo
+            sit amet neque suscipit commodo sed et mauris. Nullam a turpis nunc. Ut metus risus, scelerisque ac
+            dignissim non, faucibus ac metus.</div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elit elit, ornare non elementum
+        ut, imperdiet nec felis. Proin leo felis, congue vitae facilisis id, ullamcorper vitae ipsum.</div>
 </body>
 
 </html>

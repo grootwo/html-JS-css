@@ -18,14 +18,17 @@
         }
     </style>
     <script>
-        let output = document.getElementById("output")
-        function print_location(e) {
+        let div = document.getElementById("div")
+        function where(e) {
             let text = "버튼=" + e.button + "<br>";
-            text += "(screenX, screenY)=" + e.screenX + "," + e.screenY + "<br>";
-            text += "(clientX, clientY)=" + e.clientX + "," + e.clientY + "<br>";
-            text += "(offsetX, offsetY)=" + e.offsetX + "," + e.offsetY + "<br>";
+            text += "(screenX, screenY)=" +
+                e.screenX + "," + e.screenY + "<br>";
+            text += "(clientX, clientY)=" +
+                e.clientX + "," + e.clientY + "<br>";
+            text += "(offsetX, offsetY)=" +
+                e.offsetX + "," + e.offsetY + "<br>";
             text += "(x, y)=" + e.x + "," + e.y + "\n";
-            output.innerHTML = text;
+            div.innerHTML = text;
         }
     </script>
 </head>
@@ -36,9 +39,9 @@
     이미지 위에 마우스를 움직일 때
     onmousemove 리스너가 실행되고,
     마우스의 위치를 보여줍니다.<br><br>
-    <img onmousemove="print_location(event)"
+    <img onmousemove="where(event)"
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8fDA%3D"
         width="300">
     <!-- <div id="box" onmousemove="print_location(event)">박스</div> -->
     <br><br>
-    <div id="output"></div>
+    <div id="div"></div>

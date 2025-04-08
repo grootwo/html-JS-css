@@ -3,43 +3,42 @@
 
 <head>
     <meta charset="utf-8">
-    <title>마우스 관련 리스너</title>
+    <title>마우스 이벤트 객체의 프로퍼티</title>
+    <style>
+        #output {
+            background: skyblue;
+            width: 250px;
+        }
+
+        #box {
+            background-color: bisque;
+            width: 300px;
+            height: 300px;
+            align-items: center;
+        }
+    </style>
     <script>
-        let width = 1; // 테두리 두께
-        function down(obj) {
-            obj.style.fontStyle = "italic";
-        }
-        function up(obj) {
-            obj.style.fontStyle = "normal";
-        }
-        function over(obj) {
-            obj.style.borderColor = "violet";
-            // 테두리 폭이 0일 때 색은 보이지 않는다.
-        }
-        function out(obj) {
-            obj.style.borderColor = "lightgray";
-        }
-        function wheel(e, obj) { // e는 이벤트 객체
-            if (e.wheelDelta < 0) { // 휠을 아래로 굴릴 때
-                width--; // 폭 1 감소
-                if (width < 0) width = 0; // 폭이 0보다 작아지지 않게
-            }
-            else // 휠을 위로 굴릴 때
-                width++; // 폭 1 증가
-            obj.style.borderStyle = "ridge";
-            obj.style.borderWidth = width + "px";
+        let output = document.getElementById("output")
+        function print_location(event) {
+            let text = "버튼=" + e.button + "<br>";
+            text += "(screenX, screenY)=" + e.screenX + "," + e.screenY + "< br >";
+            text += "(clientX, clientY)=" + e.clientX + "," + e.clientY + "<br>";
+            text += "(offsetX, offsetY)=" + e.offsetX + "," + e.offsetY + "<br>";
+            text += "(x, y)=" + e.x + "," + e.y + "\n";
+            output.innerHTML = text;
         }
     </script>
 </head>
 
 <body>
-    <h3>마우스 관련 이벤트 리스너</h3>
+    <h3>마우스 이벤트 객체의 프로퍼티와 onmousemove</h3>
     <hr>
-    <div>마우스 관련
-        <span onmousedown="down(this)" onmouseup="up(this)" onmouseover="over(this)" onmouseout="out(this)"
-            onwheel="wheel(event, this)" style="display:inline-block">이벤트
-        </span>가 발생합니다.
-    </div>
-</body>
-
-</html>
+    이미지 위에 마우스를 움직일 때
+    onmousemove 리스너가 실행되고,
+    마우스의 위치를 보여줍니다.<br><br>
+    <img onmousemove="print_location(event)"
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8fDA%3D"
+        width="300">
+    <!-- <div id="box" onmousemove="print_location(event)">박스</div> -->
+    <br><br>
+    <div id="output"></div>

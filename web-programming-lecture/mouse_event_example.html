@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick calculator</title>
+    <script>
+        function init() {
+            let button = document.getElementById("button")
+            button.addEventListener("click", calculate)
+        }
+        function calculate() {
+            let input = document.getElementById("text_input")
+            let result = document.getElementById("result")
+            result.value = eval(input.value);
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <h3>onclick, 계산기 만들기</h3>
+    <hr>
+    <p>계산하고자 하는 수식을 입력하고 계산 버튼을 눌러봐요.</p>
+    <br>
+    <form>
+        식 <input type="text" value="" id="text_input">
+        <br>
+        값 <input type="text" id="result">
+        <input id="button" type="button" value="계산">
+    </form>
+</body>
+
+</html>

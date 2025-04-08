@@ -3,18 +3,37 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HTML 문서의 onload</title>
+    <title>onload로 이미지 크기 출력</title>
+    <script>
+        function changeImage() {
+            let sel = document.getElementById("sel");
+            let img = document.getElementById("myImg");
+            img.onload = function () {  // 이미지 크기 출력
+                let mySpan = document.getElementById("mySpan");
+                mySpan.innerHTML = img.width + "x" + img.height;
+            }
+            let index = sel.selectedIndex; // 선택된 옵션 인덱스
+            img.src = sel.options[index].value; // <option>의 value 속성
+        }
+    </script>
 </head>
 
-<body onload="alert('이 사이트는 2022년 9월1일부터 \
-www.js.co.kr로 옮겨지게 됩니다.')">
-    <h3>HTML 문서의 로딩 완료, onload</h3>
+<body onload="changeImage()">
+    <h3>onload로 이미지 크기 출력</h3>
     <hr>
-    이 페이지는 onload 리스너의
-    사용 예를 보여줍니다
-    이 페이지가 출력되고 난 바로 직후
-    onload 리스너를 통해
-    경고창을 출력합니다.
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option
+                value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4Fo2rTO4AovAp8Qpz4bg9p_UkHTmEkNXIQ&s">사과
+            <option value="https://m.media-amazon.com/images/I/31oubF6SdeL._AC_UF894,1000_QL80_.jpg">바나나
+            <option
+                value="https://walnutcreekfarmtexas.com/wp-content/uploads/2021/08/AdobeStock_76361909-scaled-1.jpeg">망고
+        </select>
+        <span id="mySpan">이미지 크기</span>
+    </form>
+    <img id="myImg"
+        src="https://media.istockphoto.com/id/1360554439/photo/maldives-tropical-island.jpg?s=612x612&w=0&k=20&c=1UUnuM-RyTYVkt1_YIMIzNe3JXdEeUTWngiEswms6MQ="
+        alt=".">
 </body>
 
 </html>

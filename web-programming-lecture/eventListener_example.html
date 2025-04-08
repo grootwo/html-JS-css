@@ -8,8 +8,12 @@
         let p;
         function init() { // 문서가 완전히 로드되었을 때 호출
             p = document.getElementById("p");
-            p.addEventListener("mouseover", over); // 이벤트 리스너 등록
-            p.addEventListener("mouseout", out); // 이벤트  리스너 등록
+            p.onmouseover = function () { // 익명 함수
+                this.style.backgroundColor = "greenyellow";
+            };
+            p.addEventListener("mouseout",
+                function () { this.style.backgroundColor = "skyblue"; } // 익명 함수
+            );
         }
         function over() {
             p.style.backgroundColor = "greenyellow";

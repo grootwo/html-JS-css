@@ -4,13 +4,26 @@
 <head>
     <meta charset="utf-8">
     <title>HTML 태그에 리스너 작성</title>
+    <script>
+        let p;
+        function init() { // 문서가 완전히 로드되었을 때 호출
+            p = document.getElementById("p");
+            p.onmouseover = over; // over()를 onmouseover 리스너로 등록
+            p.onmouseout = out;
+        }
+        function over() {
+            p.style.backgroundColor = "greenyellow";
+        }
+        function out() {
+            p.style.backgroundColor = "skyblue";
+        }
+    </script>
 </head>
 
 <body>
     <p>HTML 태그에 리스너 작성</p>
     <hr>
-    <p onmouseover="this.style.backgroundColor='orchid'" onmouseout="this.style.backgroundColor='white'">
-        마우스 올리면 orchid 색으로 변경</p>
+    <p id="p">마우스 올리면 orchid 색으로 변경</p>
 </body>
 
 </html>

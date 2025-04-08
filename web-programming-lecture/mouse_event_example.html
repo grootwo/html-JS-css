@@ -19,9 +19,9 @@
     </style>
     <script>
         let output = document.getElementById("output")
-        function print_location(event) {
+        function print_location(e) {
             let text = "버튼=" + e.button + "<br>";
-            text += "(screenX, screenY)=" + e.screenX + "," + e.screenY + "< br >";
+            text += "(screenX, screenY)=" + e.screenX + "," + e.screenY + "<br>";
             text += "(clientX, clientY)=" + e.clientX + "," + e.clientY + "<br>";
             text += "(offsetX, offsetY)=" + e.offsetX + "," + e.offsetY + "<br>";
             text += "(x, y)=" + e.x + "," + e.y + "\n";

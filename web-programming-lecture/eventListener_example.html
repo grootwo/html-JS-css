@@ -3,31 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DOM 객체의 이벤트 리스너 프로퍼티에 함수 등록</title>
-    <script>
-        let p;
-        function init() { // 문서가 완전히 로드되었을 때 호출
-            p = document.getElementById("p");
-            p.onmouseover = function () { // 익명 함수
-                this.style.backgroundColor = "greenyellow";
-            };
-            p.addEventListener("mouseout",
-                function () { this.style.backgroundColor = "skyblue"; } // 익명 함수
-            );
-        }
-        function over() {
-            p.style.backgroundColor = "greenyellow";
-        }
-        function out() {
-            p.style.backgroundColor = "skyblue";
-        }
-    </script>
+    <title>이벤트 객체 전달받기</title>
 </head>
 
-<body onload="init()"> // init 함수를 실행시켜야 한다.
-    <h3>DOM 객체의 이벤트 리스너 프로퍼티에 함수 등록</h3>
-    <hr>
-    <p id="p">마우스 올리면 orchid 색으로 변경</p>
+<body>
+    <p id="p">마우스 올리면 alert</p>
+    <button onclick="alert_and_print(event)">Click</button> // 인수로 꼭 event라고 작성해야 함
+    <script>
+        function alert_and_print(event) {
+            alert(event.type)
+        }
+        document.getElementById("p").onmouseover = alert_and_print; // 매개변수 안 작성해도 됨
+    </script>
 </body>
 
 </html>

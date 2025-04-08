@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    <p id="p">마우스 올리면 alert</p>
-    <button onclick="alert_and_print(event)">Click</button> // 인수로 꼭 event라고 작성해야 함
+    <p id="p">마우스 올리면 alert</p> <!--[object HTMLParagraphElement]-->
+    <button onclick="alert_and_print(event)">Click</button> <!--[object HTMLButtonElement]-->
     <script>
         function alert_and_print(event) {
-            alert(event.type)
+            alert(event.target)
         }
         document.getElementById("p").onmouseover = alert_and_print; // 매개변수 안 작성해도 됨
     </script>

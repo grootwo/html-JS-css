@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
-    <title>이벤트 객체 전달받기</title>
+    <title>Target vs. currentTarget 실습</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById("grandparent").addEventListener("click", function () { alert("👴 할아버지 클릭!"); });
+            document.getElementById("parent").addEventListener("click", function () { alert("👩 부모 클릭!"); });
+            document.getElementById("child").addEventListener("click", function () { alert("👶 자식 클릭!"); });
+        });    
+    </script>
 </head>
 
 <body>
-    <p id="p">마우스 올리면 alert</p> <!--[object HTMLParagraphElement]-->
-    <button onclick="alert_and_print(event)">Click</button> <!--[object HTMLButtonElement]-->
-    <script>
-        function alert_and_print(event) {
-            alert(event.target)
-        }
-        document.getElementById("p").onmouseover = alert_and_print; // 매개변수 안 작성해도 됨
-    </script>
+    <div id="grandparent" style="padding: 20px; border: 3px solid blue;"> 할아버지 요소
+        <div id="parent" style="padding: 20px; border: 3px solid green;"> 부모 요소
+            <button id="child" style="padding: 10px;">자식 요소(클릭!)</button>
+        </div>
+    </div>
 </body>
 
 </html>

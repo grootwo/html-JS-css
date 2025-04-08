@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <title>Target vs. currentTarget 실습</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById("grandparent").addEventListener("click", function () { alert("👴 할아버지 클릭!"); });
-            document.getElementById("parent").addEventListener("click", function () { alert("👩 부모 클릭!"); });
-            document.getElementById("child").addEventListener("click", function () { alert("👶 자식 클릭!"); });
-        });    
-    </script>
+    <title>이벤트 객체 프로퍼티</title>
 </head>
 
 <body>
-    <div id="grandparent" style="padding: 20px; border: 3px solid blue;"> 할아버지 요소
-        <div id="parent" style="padding: 20px; border: 3px solid green;"> 부모 요소
-            <button id="child" style="padding: 10px;">자식 요소(클릭!)</button>
-        </div>
-    </div>
+    <h3>이벤트 객체의 프로퍼티 출력</h3>
+    <hr>
+    <p id="p">버튼을 클릭하면 이벤트 객체를 출력합니다.</p>
+    <button onclick="f(event)">클릭하세요</button>
+    <script>
+        function f(e) { // e는 현재 발생한 이벤트 객체
+            let text = "type: " + e.type + "<br>"
+                + "target: " + e.target + "<br>"
+                + "currentTarget: " + e.currentTarget + "<br>"
+                + "defaultPrevented: " + e.defaultPrevented;
+
+            let p = document.getElementById("p");
+            p.innerHTML = text; // 이벤트 객체의 프로퍼티 출력
+        }
+    </script>
 </body>
 
 </html>

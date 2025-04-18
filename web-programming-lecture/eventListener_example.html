@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>이벤트 객체 프로퍼티</title>
+    <title>addEventListener()를 이용한 리스너 등록</title>
     <script>
-        function prevent(e) {
-            e.preventDefault();
+        function over() {
+            this.style.backgroundColor = "orchid";
+        }
+        function out() {
+            this.style.backgroundColor = "white";
         }
     </script>
 </head>
 
-<body>
-    <h3>이벤트의 디폴트 행동 취소</h3>
+<body onload="init()">
+    <h3>addEventListener()를 이용한 리스너 등록</h3>
     <hr>
-    <a href="https://www.naver.com/" onclick="prevent(event)">네이버 링크</a>
+    <p id="p" onmouseover="over()" onmouseout="out()">마우스 올리면 orchid 색으로 변경</p>
 </body>
 
 </html>

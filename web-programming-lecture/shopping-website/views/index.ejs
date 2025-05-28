@@ -1,0 +1,65 @@
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>🛍️ <%= title %>
+    </h1>
+    <nav>
+      <a href="/">홈</a>
+      <a href="/products">상품목록</a>
+      <a href="/cart">장바구니</a>
+      <a href="/board">고객센터</a> <!-- ✅ 추가 -->
+      <a href="/login">로그인</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="/images/banner.jpg" alt="쇼핑몰 배너" style="width:100%; height:auto;">
+  </section>
+
+  <main>
+    <h2>🔥 인기 상품</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="/images/product1.jpg" alt="상품1">
+        <p>상추 1kg</p>
+        <p><strong>₩3,500</strong></p>
+      </div>
+      <div class="product-card">
+        <img src="/images/product2.jpg" alt="상품2">
+        <p>깻잎 500g</p>
+        <p><strong>₩2,800</strong></p>
+      </div>
+      <!-- 필요시 반복 출력 -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 쇼핑몰 예시. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

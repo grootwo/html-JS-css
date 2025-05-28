@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title><%= post.title %> - 게시글 보기</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h2 {
+      color: #333;
+    }
+    .meta {
+      color: #777;
+      font-size: 0.9em;
+    }
+    .content {
+      margin: 20px 0;
+      white-space: pre-line;
+    }
+    .actions {
+      margin-top: 20px;
+    }
+    a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+  <p>작성자: <%= post.author %> | 작성일: <%= post.created_at %></p>
+
+  <% if (files && files.length > 0) { %>
+    <h4>첨부파일</h4>
+    <ul>
+      <% files.forEach(file => { %>
+        <li><a href="/uploads/<%= file.filename %>" download><%= file.filename %></a></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <div class="actions">
+    <a href="/board/reply/<%= post.id %>">[답글]</a>
+    <a href="/board/edit/<%= post.id %>">[수정]</a>
+    <a href="/board/delete/<%= post.id %>" onclick="return confirm('정말 삭제하시겠습니까?')">[삭제]</a>
+    <a href="/board">[목록]</a>
+  </div>
+
+</body>
+</html>

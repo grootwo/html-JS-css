@@ -1,0 +1,52 @@
+<!--
+<h2><%= post ? '글 수정' : (parentId ? '답글 작성' : '새 글 작성') %></h2>
+<form action="<%= post ? '/board/edit/' + post.id : '/board/new' %>" method="post">
+    <input type="hidden" name="parent_id" value="<%= post ? post.parent_id : parentId %>">
+    <input type="text" name="title" placeholder="제목" value="<%= post?.title || '' %>" required><br>
+    <textarea name="content" placeholder="내용"><%= post?.content || '' %></textarea><br>
+    <button type="submit">저장</button>
+</form>
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title><%= post ? '글 수정' : (parentId ? '답글 작성' : '새 글 작성') %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      font-size: 1em;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2><%= post ? '글 수정' : (parentId ? '답글 작성' : '새 글 작성') %></h2>
+
+  <form action="<%= post ? '/board/edit/' + post.id : '/board/new' %>" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="parent_id" value="<%= post ? post.parent_id : parentId %>">
+
+    <label for="title">제목</label><br>
+    <input type="text" id="title" name="title" placeholder="제목" value="<%= post?.title || '' %>" required><br>
+
+    <label for="content">내용</label><br>
+    <textarea id="content" name="content" placeholder="내용" rows="8"><%= post?.content || '' %></textarea><br>
+    <input type="file" name="attachment">
+    <button type="submit">저장</button>
+  </form>
+
+  <p><a href="/board">← 게시판으로 돌아가기</a></p>
+
+</body>
+</html>
+

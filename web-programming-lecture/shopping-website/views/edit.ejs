@@ -1,0 +1,38 @@
+<!-- views/edit.ejs -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title><%= post ? '글 수정' : (parentId ? '답글 작성' : '새 글 작성') %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      font-size: 1em;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h2>글 수정</h2>
+  <form action="/board/edit/<%= post.id %>" method="post">
+    <label>제목</label><br>
+    <input type="text" name="title" value="<%= post.title %>" required><br><br>
+
+    <label>내용</label><br>
+    <textarea name="content" rows="8" cols="40" required><%= post.content %></textarea><br><br>
+
+    <button type="submit">저장</button>
+  </form>
+  <br>
+  <a href="/board">← 게시판으로 돌아가기</a>
+</body>
+</html>

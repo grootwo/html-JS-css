@@ -29,19 +29,22 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/user',userRouter);
+app.use('/user', userRouter);
 app.use('/board', boardRouter);
-app.get('/login', (req,res)=> {
+app.get('/login', (req, res) => {
   res.redirect('/user/login');
+});
+app.get('/register', (req, res) => {
+  res.redirect('/user/register');
 });
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

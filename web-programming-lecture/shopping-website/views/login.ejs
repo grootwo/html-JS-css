@@ -61,11 +61,18 @@
 
     <h2>로그인</h2>
     <form action="/user/login" method="post">
-        <input type="text" name="username" placeholder="아이디" required><br>
-        <input type="password" name="password" placeholder="비밀번호" required><br>
-        <button type="submit">로그인</button>
+        <!-- <input type="text" name="username" placeholder="아이디" required><br>
+        <input type="password" name="password" placeholder="비밀번호" required><br> -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" required>아이디</label>
+            <input type="text" name="username" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" required>이름</label>
+            <input type="password" name="password" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <button class="btn btn-primary" type="submit">로그인</button>
     </form>
-    <a href="/register">회원가입</a>
 
 </body>
 

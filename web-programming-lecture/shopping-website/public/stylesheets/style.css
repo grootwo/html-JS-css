@@ -14,6 +14,16 @@ body {
   padding: 0;
 }
 
+footer {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
 header {
   padding: 50px;
   text-align: center;
@@ -42,11 +52,4 @@ nav a {
   padding: 1em;
   width: 150px;
   text-align: center;
-}
-
-footer {
-  background: #f2f2f2;
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
 }

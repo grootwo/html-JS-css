@@ -7,14 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <style>
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 400px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
         input {
             width: 100%;
             padding: 10px;
@@ -41,29 +33,50 @@
 
 <body>
 
-    <h2>회원가입</h2>
     <form action="/user/register" method="post">
-        <!-- <input type="text" name="username" placeholder="아이디" required><br>
-        <input type="text" name="name" placeholder="이름" required><br>
-        <input type="password" name="password" placeholder="비밀번호" required><br> -->
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label" required>아이디</label>
-            <input type="text" name="username" class="form-control" id="exampleFormControlInput1">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label" required>이름</label>
-            <input type="text" name="name" class="form-control" id="exampleFormControlInput1">
-        </div>
-        <label for="inputPassword5" class="form-label">비밀번호</label>
-        <input type="password" name="password" id="inputPassword5" class="form-control"
-            aria-describedby="passwordHelpBlock" required>
-        <div id="passwordHelpBlock" class="form-text">
-            비밀번호는 최소 8자, 최대 20자로 설정해야 하며, 영문자와 숫자만 조합하여야 합니다.
-        </div>
-        <button class="btn btn-primary" type="submit">가입하기</button>
-        <!-- <button type="submit">가입하기</button> -->
-    </form>
+        <div class="container py-2 h-30">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-bright text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
+                            <div class=" pb-2">
+
+                                <h2 class="fw-bold mb-5 text-uppercase">회원가입</h2>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="text" name="username" id="typeEmailX"
+                                        class="form-control form-control-lg" placeholder="아이디" required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="text" name="name" class="form-control form-control-lg" placeholder="이름"
+                                        required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="password" name="password" id="typePasswordX"
+                                        class="form-control form-control-lg" placeholder="비밀번호" required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="password" name="password-confirm" id="typePasswordX"
+                                        class="form-control form-control-lg" placeholder="비밀번호 재입력" required />
+                                </div>
+
+                                <div id="passwordHelpBlock" class="form-text">
+                                    비밀번호는 최소 8자, 최대 20자로 설정해야 하며, 영문자와 숫자만 조합하여야 합니다.
+                                </div>
+
+                                <button class="btn btn-primary btn-lg px-5" type="submit"
+                                    style="margin-top: 30px;">가입하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 
 </html>

@@ -40,7 +40,7 @@
 
 <body>
     <form action="/user/login" method="post">
-        <div class="container py-5 h-50">
+        <div class="container py-2 h-30">
             <div class="row d-flex justify-content-center align-items-center h-50">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-bright text-black" style="border-radius: 1rem;">
@@ -53,13 +53,13 @@
                                 <div data-mdb-input-init class="form-outline form-white mb-4">
                                     <label class="form-label" for="typeEmailX">아이디</label>
                                     <input type="text" name="username" id="typeEmailX"
-                                        class="form-control form-control-lg" />
+                                        class="form-control form-control-lg" required />
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline form-white mb-4">
                                     <label class="form-label" for="typePasswordX">비밀번호</label>
                                     <input type="password" name="password" id="typePasswordX"
-                                        class="form-control form-control-lg" />
+                                        class="form-control form-control-lg" required />
                                 </div>
 
                                 <button class="btn btn-primary btn-lg px-5" type="submit"
@@ -71,7 +71,6 @@
                                         class="text-blue-50 fw-bold">회원가입</a>
                                 </p>
                             </div>
-
                         </div>
                     </div>
                 </div>

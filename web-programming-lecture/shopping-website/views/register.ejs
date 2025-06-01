@@ -55,12 +55,12 @@
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline form-white mb-4">
-                                    <input type="password" name="password" id="typePasswordX"
-                                        class="form-control form-control-lg" placeholder="비밀번호" required />
+                                    <input type="password" name="password" id="pw1" class="form-control form-control-lg"
+                                        placeholder="비밀번호" required />
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline form-white mb-4">
-                                    <input type="password" name="password-confirm" id="typePasswordX"
+                                    <input type="password" name="password-confirm" id="pw2"
                                         class="form-control form-control-lg" placeholder="비밀번호 재입력" required />
                                 </div>
 
@@ -68,8 +68,8 @@
                                     비밀번호는 최소 8자, 최대 20자로 설정해야 하며, 영문자와 숫자만 조합하여야 합니다.
                                 </div>
 
-                                <button class="btn btn-primary btn-lg px-5" type="submit"
-                                    style="margin-top: 30px;">가입하기</button>
+                                <button class="btn btn-primary btn-lg px-5" type="submit" style="margin-top: 30px;"
+                                    onclick="return validatePassword()">가입하기</button>
                             </div>
                         </div>
                     </div>
@@ -78,5 +78,20 @@
         </div>
     </form>
 </body>
+<script>
+    function validatePassword() {
+        console.log('confirmPassword 실행')
+        pw1 = document.getElementById('pw1').value;
+        pw2 = document.getElementById('pw2').value;
+        console.log(pw1);
+        console.log(pw2);
+        if (pw1 == pw2) {
+            return true;
+        } else {
+            alert('입력한 비밀번호가 일치하지 않습니다. 다시 작성해주세요.')
+            return false;
+        }
+    }
+</script>
 
 </html>

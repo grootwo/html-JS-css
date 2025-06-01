@@ -1,1 +1,30 @@
-// products view (code is implemented in the chat)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <% for (let product of products){%>
+            <li>
+                <h3>
+                    <%= product.name %>
+                </h3>
+                <h5>
+                    <%= product.description %>
+                </h5>
+                <h5>
+                    <%= product.price %>원
+                </h5>
+                <img src="<%= product.thumbnail %>" width="100px">
+                <img src="<%= product.descriptionImgae %>" width="100px">
+            </li>
+            <% } %>
+    </ul>
+</body>
+
+</html>

@@ -5,23 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            align-items: flex-start;
+        }
+
+        img {
+            width: 1000px;
+            height: 1000px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
     <ul>
         <% for (let product of products){%>
             <li>
-                <h3>
-                    <%= product.name %>
-                </h3>
-                <h5>
-                    <%= product.description %>
-                </h5>
-                <h5>
-                    <%= product.price %>원
-                </h5>
-                <img src="<%= product.thumbnail %>" width="100px">
-                <img src="<%= product.descriptionImgae %>" width="100px">
+                <div class="card col-md-3 col-10 mt-5">
+                    <img class='img-thumbnail' src="<%= product.thumbnail %>" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            <%= product.name %>
+                        </h5>
+                        <p class="card-text">
+                            <%= product.price %>원
+                        </p>
+                    </div>
+                </div>
             </li>
             <% } %>
     </ul>

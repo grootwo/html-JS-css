@@ -4,16 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        상품
+        <%= product.name %>
     </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <style>
+        .information {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
 <body>
-    <h2>상세 페이지
-    </h2>
-    <p>
-        <%= product.name %>
-    </p>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-md-6 mb-3">
+                <img src="<%= product.thumbnail %>" alt="Product" class="img-fluid rounded product-image"
+                    id="mainImage">
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-6 information">
+                <div>
+                    <h2 class="mb-3">
+                        <%= product.name %>
+                    </h2>
+                    <div class="mb-3">
+                        <span class="h4 me-2">
+                            <%= product.price %>원
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-half text-warning"></i>
+                        <span class="ms-2">키우기 난이도 4.5</span>
+                    </div>
+                    <p class="mb-4">
+                        <%= product.description %>
+                    </p>
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <label for="quantity" class="form-label">수량:</label>
+                        <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">
+                    </div>
+                    <button class="btn btn-primary btn-lg mb-3 me-2">
+                        <i class="bi bi-cart-plus"></i> 장바구니에 담기
+                    </button>
+                    <button class="btn btn-outline-secondary btn-lg mb-3">
+                        <i class="bi bi-heart"></i> 위시리스트에 담기
+                    </button>
+                </div>
+            </div>
+
+            <img src="<%= product.descriptionImage %>">
+        </div>
+    </div>
 </body>

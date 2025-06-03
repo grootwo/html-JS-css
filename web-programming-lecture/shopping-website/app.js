@@ -48,11 +48,11 @@ app.get('/register', (req, res) => {
 const products = [
   {
     id: 1,
-    name: '고사리',
+    name: '무늬 보스턴 고사리',
     description: '15cm(대품)로 행잉 화분에 담아 보내드립니다.',
     price: '50,000',
     thumbnail: '/images/고사리1.png',
-    descriptionImgae: '/images/고사리2.png'
+    descriptionImage: '/images/고사리2.png'
   },
   {
     id: 2,
@@ -60,7 +60,7 @@ const products = [
     description: '잔털은 먼지가 아니니 닦아내면 안됩니다.',
     price: '10,000',
     thumbnail: '/images/박쥐란1.png',
-    descriptionImgae: '/images/박쥐란2.png'
+    descriptionImage: '/images/박쥐란2.png'
   },
   {
     id: 3,
@@ -68,7 +68,7 @@ const products = [
     description: '6 ~ 9월에 개화합니다. 비가 많이 오는 경우 개화하지 않을 수도 있습니다.',
     price: '3,000',
     thumbnail: '/images/백묘국1.png',
-    descriptionImgae: '/images/백묘국2.png'
+    descriptionImage: '/images/백묘국2.png'
   },
   {
     id: 4,
@@ -76,7 +76,7 @@ const products = [
     description: '습한 토양과 반그늘을 좋아합니다.',
     price: '10,000',
     thumbnail: '/images/캄파눌라1.png',
-    descriptionImgae: '/images/캄파눌라2.png'
+    descriptionImage: '/images/캄파눌라2.png'
   }
 ];
 app.get('/products', (req, res) => {

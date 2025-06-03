@@ -80,16 +80,12 @@ const products = [
   }
 ];
 app.get('/products', (req, res) => {
-  console.log('상품 목록 페이지');
   res.render("products", { products });
 });
 app.get('/products/:id', (req, res) => {
-  console.log("------------------------------");
   let id = req.params.id;
-  console.log(id);
-  let product = products.find((item) => item.id === id);
-  console.log(product)
-  res.render('product', { product: product });
+  let index = products.findIndex((item) => item.id == id);
+  res.render('product', { product: products[index] });
 });
 
 // catch 404 and forward to error handler

@@ -8,12 +8,21 @@
     <style>
         ul {
             list-style: none;
+            display: flex;
+            justify-content: space-between;
             align-items: flex-start;
         }
 
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: cornflowerblue;
+        }
+
         img {
-            width: 1000px;
-            height: 1000px;
             object-fit: cover;
         }
     </style>
@@ -22,20 +31,21 @@
 <body>
     <ul>
         <% for (let product of products){%>
-            <li>
-                <div class="card col-md-3 col-10 mt-5">
-                    <a href="/products/<%= product.id %>">보기 링크</a>
-                    <img class='img-thumbnail' src="<%= product.thumbnail %>" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            <%= product.name %>
-                        </h5>
-                        <p class="card-text">
-                            <%= product.price %>원
-                        </p>
+            <a href="/products/<%= product.id %>">
+                <li>
+                    <div class="card m-1">
+                        <img class='img-thumbnail' src="<%= product.thumbnail %>" />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                <%= product.name %>
+                            </h5>
+                            <p class="card-text">
+                                <%= product.price %>원
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            </a>
             <% } %>
     </ul>
 </body>

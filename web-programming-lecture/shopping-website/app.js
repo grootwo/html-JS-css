@@ -43,38 +43,53 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
   res.redirect('/user/register');
 });
+
+
+const products = [
+  {
+    id: 1,
+    name: '고사리',
+    description: '15cm(대품)로 행잉 화분에 담아 보내드립니다.',
+    price: '50,000',
+    thumbnail: '/images/고사리1.png',
+    descriptionImgae: '/images/고사리2.png'
+  },
+  {
+    id: 2,
+    name: '박쥐란',
+    description: '잔털은 먼지가 아니니 닦아내면 안됩니다.',
+    price: '10,000',
+    thumbnail: '/images/박쥐란1.png',
+    descriptionImgae: '/images/박쥐란2.png'
+  },
+  {
+    id: 3,
+    name: '백묘국',
+    description: '6 ~ 9월에 개화합니다. 비가 많이 오는 경우 개화하지 않을 수도 있습니다.',
+    price: '3,000',
+    thumbnail: '/images/백묘국1.png',
+    descriptionImgae: '/images/백묘국2.png'
+  },
+  {
+    id: 4,
+    name: '그레이스 캄파눌라',
+    description: '습한 토양과 반그늘을 좋아합니다.',
+    price: '10,000',
+    thumbnail: '/images/캄파눌라1.png',
+    descriptionImgae: '/images/캄파눌라2.png'
+  }
+];
 app.get('/products', (req, res) => {
-  const products = [
-    {
-      name: '무늬보스톤 고사리',
-      description: '15cm(대품)로 행잉 화분에 담아 보내드립니다.',
-      price: '50,000',
-      thumbnail: '/images/고사리1.png',
-      descriptionImgae: '/images/고사리2.png'
-    },
-    {
-      name: '박쥐란',
-      description: '잔털은 먼지가 아니니 닦아내면 안됩니다.',
-      price: '10,000',
-      thumbnail: '/images/박쥐란1.png',
-      descriptionImgae: '/images/박쥐란2.png'
-    },
-    {
-      name: '백묘국',
-      description: '6 ~ 9월에 개화합니다. 비가 많이 오는 경우 개화하지 않을 수도 있습니다.',
-      price: '3,000',
-      thumbnail: '/images/백묘국1.png',
-      descriptionImgae: '/images/백묘국2.png'
-    },
-    {
-      name: '그레이스 캄파눌라',
-      description: '습한 토양과 반그늘을 좋아합니다.',
-      price: '10,000',
-      thumbnail: '/images/캄파눌라1.png',
-      descriptionImgae: '/images/캄파눌라2.png'
-    }
-  ];
-  res.render("products", { products })
+  console.log('상품 목록 페이지');
+  res.render("products", { products });
+});
+app.get('/products/:id', (req, res) => {
+  console.log("------------------------------");
+  let id = req.params.id;
+  console.log(id);
+  let product = products.find((item) => item.id === id);
+  console.log(product)
+  res.render('product', { product: product });
 });
 
 // catch 404 and forward to error handler

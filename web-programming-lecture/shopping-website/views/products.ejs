@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>상품 목록</title>
     <style>
         ul {
             list-style: none;
@@ -24,6 +24,7 @@
         <% for (let product of products){%>
             <li>
                 <div class="card col-md-3 col-10 mt-5">
+                    <a href="/products/<%= product.id %>">보기 링크</a>
                     <img class='img-thumbnail' src="<%= product.thumbnail %>" />
                     <div class="card-body text-center">
                         <h5 class="card-title">

@@ -32,4 +32,18 @@ router.get('/all', (req, res) => {
     });
 });
 
+// 상품 상세 페이지
+router.get('/:id', (req, res) => {
+    console.log('***************************')
+    db.all('SELECT * FROM products WHERE id = $id', (err, products) => {
+        if (err) return res.status(500).send('DB 오류: 선택 상품 조회 실패');
+
+        console.log(products)
+        res.render('product', {
+            product: products[0],
+            user: req.session.user
+        });
+    });
+});
+
 module.exports = router;

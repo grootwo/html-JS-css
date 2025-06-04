@@ -8,36 +8,22 @@
 -->
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-            background-color: #f9f9f9;
-        }
-        h2 {
-            color: #333;
-        }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 400px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
         input {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
             box-sizing: border-box;
         }
+
         button {
             width: 100%;
-            background-color: #007BFF;
             color: white;
             padding: 12px;
             border: none;
@@ -45,21 +31,52 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
+
 <body>
-    <a href="/" style="display:inline-block; margin-bottom:10px; color:#2563eb; text-decoration:underline;">🏠 메인으로 돌아가기
-    </a>
-
-    <h2>로그인</h2>
     <form action="/user/login" method="post">
-        <input type="text" name="username" placeholder="아이디" required><br>
-        <input type="password" name="password" placeholder="비밀번호" required><br>
-        <button type="submit">로그인</button>
-    </form>
+        <div class="container py-2 h-30">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-bright text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
+                            <div class=" pb-5">
+
+                                <h2 class="fw-bold mb-5 text-uppercase">로그인</h2>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <label class="form-label" for="typeEmailX">아이디</label>
+                                    <input type="text" name="username" id="typeEmailX"
+                                        class="form-control form-control-lg" required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <label class="form-label" for="typePasswordX">비밀번호</label>
+                                    <input type="password" name="password" id="typePasswordX"
+                                        class="form-control form-control-lg" required />
+                                </div>
+
+                                <button class="btn btn-primary btn-lg px-5" type="submit"
+                                    style="margin-top: 30px;">로그인</button>
+                            </div>
+
+                            <div>
+                                <p class="mb-0" style="color: silver;">계정이 없으신가요? <a href="/user/register"
+                                        class="text-blue-50 fw-bold">회원가입</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
+
 </html>

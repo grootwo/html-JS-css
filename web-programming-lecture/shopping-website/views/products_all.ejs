@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>전체 상품 목록</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      max-height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .cart-button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #22c55e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart-button:hover {
+      background-color: #16a34a;
+    }
+
+    /* ✅ 노란색 돌아가기 링크 스타일 */
+    .back-link {
+      color: #facc15;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧾 전체 상품 목록</h1>
+    <p><a href="/products" class="back-link">← 오늘의 추천으로 돌아가기</a></p>
+  </header>
+
+  <main>
+    <div class="product-grid">
+      <% products.forEach(p => { %>
+        <div class="product-card">
+
+          <img src="/images/<%= p.image || 'default.jpg' %>" alt="<%= p.name %>">
+
+          <h3><%= p.emoji %> <%= p.name %>
+            <% if (p.is_featured === 1) { %>
+              <span style="color: #facc15; font-size: 0.9em;">⭐ 추천</span>
+            <% } %>
+          </h3>
+
+          <p><%= p.description %></p>
+          <strong>₩<%= p.price.toLocaleString() %></strong>
+
+          <form action="/cart/add" method="POST">
+            <input type="hidden" name="productId" value="<%= p.id %>">
+            <button type="submit" class="cart-button">🛒 장바구니 담기</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 쇼핑몰 예시. All rights reserved.</p>
+  </footer>
+</body>
+</html>

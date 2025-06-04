@@ -15,32 +15,34 @@
 
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>고객센터 게시판</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h2 {
+      color: #333;
+    }
     a {
       text-decoration: none;
       color: #007BFF;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     ul {
       list-style-type: none;
       padding: 0;
     }
-
     li {
       margin: 10px 0;
     }
   </style>
 </head>
-
 <body>
 
   <header>
@@ -53,16 +55,15 @@
 
   <main>
     <ul>
-      <% posts.forEach(post=> { %>
-        <li style="margin-left: <%= post.parent_id ? '30px' : '0' %>">
+      <% posts.forEach(post => { %>
+        <li style="margin-left:<%= post.parent_id ? '30px' : '0' %>">
           <a href="/board/view/<%= post.id %>">
-            <%= post ? '글 수정' : post.parent_id ? '[답글]' : '' %>
-              <%= post.title %> - <%= post.author %>
+            <%= post ? '글 수정': post.parent_id ? '[답글]' : '' %> <%= post.title %> - <%= post.author %>
           </a>
           (<a href="/board/edit/<%= post.id %>">수정</a> /
-          <a href="/board/delete/<%= post.id %>">삭제</a>)
+           <a href="/board/delete/<%= post.id %>">삭제</a>)
         </li>
-        <% }) %>
+      <% }) %>
     </ul>
   </main>
 
@@ -71,5 +72,4 @@
   </footer>
 
 </body>
-
 </html>

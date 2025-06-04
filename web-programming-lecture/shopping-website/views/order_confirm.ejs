@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 확인</title>
+</head>
+<body>
+    <div class="container">
+        <h2>✅ 주문 확인</h2>
+
+        <% if (typeof error !== 'undefined') { %>
+            <p style="color: red; font-weight: bold;"><%= error %></p>
+        <% } else { %>
+            <p><%= user.name %>님, 주문이 정상적으로 접수되었습니다.</p>
+            <p>감사합니다! 🍎🍌🍇</p>
+        <% } %>
+
+        <p>
+            <a href="/" class="btn">🏠 홈으로 돌아가기</a>
+        </p>
+    </div>
+</body>
+</html>

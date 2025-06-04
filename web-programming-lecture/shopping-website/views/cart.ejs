@@ -1,1 +1,78 @@
-// cart view (code is implemented in the chat)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>장바구니</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 12px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .item-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px; /* 아이템과 삭제버튼 사이 간격 */
+        }
+        .delete-button {
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            background-color: #c53030;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+<h2>🛒 <%= user.name %>님의 장바구니</h2>
+
+<% if (cartItems.length === 0) { %>
+    <p>장바구니가 비어 있습니다.</p>
+<% } else { %>
+    <ul>
+       <% cartItems.forEach(item => { %>
+           <li>
+             <%= item.emoji %> <%= item.name %> - ₩<%= item.price.toLocaleString() %> ×
+             <form action="/cart/update" method="POST" style="display: inline;">
+               <input type="hidden" name="productId" value="<%= item.id %>">
+               <button type="submit" name="action" value="decrease">➖</button>
+               <span><%= item.quantity %></span>
+               <button type="submit" name="action" value="increase">➕</button>
+             </form>
+             <form action="/cart/delete" method="POST" style="display: inline;">
+               <input type="hidden" name="productId" value="<%= item.id %>">
+               <button type="submit">🗑 삭제</button>
+             </form>
+           </li>
+         <% }) %>
+    </ul>
+<% } %>
+
+<p><a href="/products">← 상품 계속 보기</a></p>
+<form action="/order/confirm" method="POST" style="margin-top: 20px;">
+    <button type="submit" class="btn btn-primary">✅ 주문하기</button>
+</form>
+</body>
+</html>

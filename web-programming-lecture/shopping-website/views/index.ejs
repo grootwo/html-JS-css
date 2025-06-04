@@ -1,52 +1,150 @@
-<!--
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
--->
-
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>
-    <%= title %>
-  </title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    .featured-slide {
+      display: none;
+      justify-content: center;
+      gap: 20px;
+      flex-direction: row;
+    }
+    .featured-slide.active {
+      display: flex;
+    }
+  </style>
+
+  <!-- 가로로 2개씩 3초 간격으로 추천 목록 보이기 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll('.featured-slide');
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) {
+            slide.classList.add('active');
+          }
+        });
+      }
+
+      showSlide(current); // 최초 1번 보여주기
+
+      setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 3000);
+    });
+  </script>
+
+  <!-- 배너 밑에 아래 내용을 3초 단위로 보이기 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const phrases = [
+        "🍓 오늘의 신선한 과일을 만나보세요!",
+        "🍌 인기 많은 과일을 지금 확인해보세요!",
+        "🍊 달콤한 오렌지, 무료배송 중!",
+        "🍇 포도로 건강 챙기세요!",
+        "🥝 한정 수량 특가! 지금 주문하면 내일 도착! 신선함을 빠르게!",
+        "🍍 과일 한입에 기분까지 상큼해져요!"
+      ];
+
+      const bannerText = document.getElementById("banner-text");
+      let current = 0;
+
+      setInterval(() => {
+        current = (current + 1) % phrases.length;
+        bannerText.textContent = phrases[current];
+      }, 3000); // 3초 간격
+    });
+  </script>
+
 </head>
-
 <body>
-  <section class="banner">
-    <img src="/images/banner.jpg" alt="쇼핑몰 배너" style="width:100%; height:auto;">
-  </section>
+<!-- index.ejs 상단에 추가 로그인/회원가입  -->
+<header style="display: flex; justify-content: flex-end; padding: 10px;">
+    <% if (!user) { %>
+        <a href="/login" style="color: #fff; background-color: #facc15; padding: 6px 12px; border-radius: 5px; text-decoration: none;">로그인</a>
+        <a href="/user/register" style="color: #fff; background-color: #facc15; padding: 6px 12px; border-radius: 5px; text-decoration: none;">회원가입</a>
+     <% } else { %>
+        <span style="margin-right: 10px;"><%= user.username %>님 환영합니다!</span>
+        <a href="/user/logout" style="color: #fff; background-color: #ef4444; padding: 6px 12px; border-radius: 5px; text-decoration: none;">로그아웃</a>
+    <% } %>
+</header>
+<hr>
 
-  <main>
-    <h2>🔥 인기 상품</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="/images/product1.jpg" alt="상품1">
-        <p>상추 1kg</p>
-        <p><strong>₩3,500</strong></p>
-      </div>
-      <div class="product-card">
-        <img src="/images/product2.jpg" alt="상품2">
-        <p>깻잎 500g</p>
-        <p><strong>₩2,800</strong></p>
-      </div>
-      <!-- 필요시 반복 출력 -->
+<header>
+  <h1>🛍️ <%= title %></h1>
+  <nav>
+    <a href="/">홈</a>
+    <a href="/products">상품목록</a>
+    <a href="/cart">장바구니</a>
+    <a href="/board">고객센터</a> <!-- ✅ 추가 -->
+  </nav>
+</header>
+
+<section >
+    <div class="banner" style="text-align: left;">
+<!--        <img src="<%= featuredProducts[0]?.image || '/images/default.png' %>"
+             alt="<%= featuredProducts[0]?.name || '추천 과일' %>"
+             style="width:100%; border-radius:10px;">
+-->        <img src="/images/default.png"
+             alt="추천 과일"
+             style="width:10%; border-radius:10px;">
+           <div id="banner-text"
+                style="margin-top: 15px; font-size: 1.2em; color: #333;">
+               🍓 오늘의 신선한 과일을 만나보세요!
+           </div>
+
     </div>
-  </main>
-</body>
+</section>
+    <div>
+        <h2 style="text-align: center;margin-top:30px; font-size:1.3em;">
+            🍇 오늘의 추천 과일 만나보세요 🍊
+        </h2>
 
+    </div>
+
+<section>
+    <div style="margin-top:60px; text-align:center; ">
+        <a href="/products" class="shop-now-btn">바로 쇼핑하기 →</a>
+    </div>
+</section>
+
+<main>
+  <h2 style="text-align: center; font-size: 1.5em; margin-top: 20px;">🔥 인기 상품</h2>
+
+    <!-- 🔧 3. 2개 상품을 3초 간격으로 슬라이드로 표시 -->
+    <div id="featured-container">
+      <% for (let i = 0; i < featuredProducts.length; i += 2) { %>
+        <div class="featured-slide <%= i === 0 ? 'active' : '' %>">
+          <% for (let j = i; j < i + 2 && j < featuredProducts.length; j++) { %>
+            <div class="product-card">
+          <!--    <img src="<%= featuredProducts[j].image %>" alt="<%= featuredProducts[j].name %>"> -->
+              <img src="/images/<%= featuredProducts[j].image || 'default.png' %>"
+                   alt="<%= featuredProducts[j].name %>"
+                   style="width: 120px; height: 120px; object-fit: cover;">
+                <h3><%= featuredProducts[j].emoji %> <%= featuredProducts[j].name %></h3>
+              <p><%= featuredProducts[j].description %></p>
+              <strong>₩<%= featuredProducts[j].price.toLocaleString() %></strong>
+
+              <form action="/cart/add" method="POST">
+                <input type="hidden" name="productId" value="<%= featuredProducts[j].id %>">
+                <button type="submit" class="cart-button">🛒 장바구니 담기</button>
+              </form>
+            </div>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 쇼핑몰 예시. All rights reserved.</p>
+</footer>
+</body>
 </html>

@@ -9,7 +9,7 @@ const db = new sqlite3.Database(dbPath);
 
 // 회원가입 페이지
 router.get('/register', (req, res) => {
-    res.render('register');
+    res.render('register'); //register.ejs
 });
 
 // 회원가입 처리
@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
 
 // 로그인 페이지
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login'); //login.ejs
 });
 
 // 로그인 처리
@@ -49,15 +49,23 @@ router.post('/login', (req, res) => {
             req.session.user = user;
             res.redirect('/');
         } else {
-            res.send('비밀번호가 일치하지 않습니다.');
+            res.status(401).render('login_failed');
         }
     });
 });
 
 // 로그아웃
+// router.get('/logout', (req, res) => {
+//     req.session.destroy();
+//     res.redirect('/');
+// });
 router.get('/logout', (req, res) => {
-    req.session.destroy();
-    res.redirect('/');
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('❌ 로그아웃 오류:', err);
+        }
+        res.redirect('/');
+    });
 });
 
 module.exports = router;

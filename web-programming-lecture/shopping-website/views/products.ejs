@@ -1,53 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품 목록</title>
-    <style>
-        ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        a:hover {
-            color: cornflowerblue;
-        }
-
-        img {
-            object-fit: cover;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>상품목록</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      max-height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .info-bar {
+      margin: 15px 0;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .info-bar a {
+      margin-left: 10px;
+      font-size: 0.95em;
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
-    <ul>
-        <% for (let product of products){%>
-            <a href="/products/<%= product.id %>">
-                <li>
-                    <div class="card m-1">
-                        <img class='img-thumbnail' src="<%= product.thumbnail %>" />
-                        <div class="card-body text-center">
-                            <h5 class="card-title">
-                                <%= product.name %>
-                            </h5>
-                            <p class="card-text">
-                                <%= product.price %>원
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </a>
-            <% } %>
-    </ul>
-</body>
+  <header>
+    <h1>📦 상품 목록</h1>
+    <nav>
+      <a href="/">홈</a>
+      <a href="/products">상품목록</a>
+      <a href="/cart">장바구니</a>
+      <a href="/board">고객센터</a>
+    </nav>
+  </header>
 
+  <!-- 로그인 상태 표시 -->
+  <section class="info-bar">
+    <% if (user) { %>
+      <p><%= user.name %>님, 환영합니다!</p>
+    <% } else { %>
+      <p>🛑 로그인 후 장바구니를 사용할 수 있습니다.</p>
+    <% } %>
+  </section>
+
+  <!-- ✅ 상품 수 + 전체 목록 보기 -->
+  <section class="info-bar">
+    현재 등록된 상품 수: <%= allProducts.length %>개
+    <a href="/products/all">전체 목록 보기</a>
+  </section>
+
+  <section>
+    <h2>🍓 오늘의 과일 추천</h2>
+    <div class="product-grid">
+      <% featuredProducts.forEach(product => { %>
+        <div class="product-card">
+
+          <img src="/images/<%= product.image || 'default.jpg' %>" alt="<%= product.name %>">
+
+          <h3><%= product.emoji %> <%= product.name %></h3>
+          <p><%= product.description %></p>
+          <strong>₩<%= product.price.toLocaleString() %></strong>
+
+          <!-- ✅ 장바구니 폼 추가 -->
+          <form action="/cart/add" method="POST">
+            <input type="hidden" name="productId" value="<%= product.id %>">
+            <button type="submit" class="cart-button">🛒 장바구니 담기</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 쇼핑몰 예시. All rights reserved.</p>
+  </footer>
+</body>
 </html>

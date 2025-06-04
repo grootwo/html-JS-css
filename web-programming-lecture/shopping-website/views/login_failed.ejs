@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 실패</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .icon-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #2563eb;
+            color: white;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .icon-button:hover {
+            background-color: #1e4bb8;
+        }
+        .icon-button span {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<h2>❌ 비밀번호가 일치하지 않습니다.</h2>
+<p>아이디와 비밀번호를 다시 확인해 주세요.</p>
+
+<!-- 🔄 로그인 페이지로 이동하는 버튼 -->
+<a class="icon-button" href="/user/login">
+    <span>🔑</span> 다시 로그인하기
+</a>
+</body>
+</html>

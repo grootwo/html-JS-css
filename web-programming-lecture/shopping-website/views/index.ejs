@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <title><%= title %></title>
+  <title>
+    <%= title %>
+  </title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <style>
     .featured-slide {
@@ -11,6 +14,7 @@
       gap: 20px;
       flex-direction: row;
     }
+
     .featured-slide.active {
       display: flex;
     }
@@ -63,72 +67,53 @@
   </script>
 
 </head>
+
 <body>
-<!-- index.ejs 상단에 추가 로그인/회원가입  -->
-<header style="display: flex; justify-content: flex-end; padding: 10px;">
-    <% if (!user) { %>
-        <a href="/login" style="color: #fff; background-color: #facc15; padding: 6px 12px; border-radius: 5px; text-decoration: none;">로그인</a>
-        <a href="/user/register" style="color: #fff; background-color: #facc15; padding: 6px 12px; border-radius: 5px; text-decoration: none;">회원가입</a>
-     <% } else { %>
-        <span style="margin-right: 10px;"><%= user.username %>님 환영합니다!</span>
-        <a href="/user/logout" style="color: #fff; background-color: #ef4444; padding: 6px 12px; border-radius: 5px; text-decoration: none;">로그아웃</a>
-    <% } %>
-</header>
-<hr>
 
-<header>
-  <h1>🛍️ <%= title %></h1>
-  <nav>
-    <a href="/">홈</a>
-    <a href="/products">상품목록</a>
-    <a href="/cart">장바구니</a>
-    <a href="/board">고객센터</a> <!-- ✅ 추가 -->
-  </nav>
-</header>
-
-<section >
+  <section>
     <div class="banner" style="text-align: left;">
-<!--        <img src="<%= featuredProducts[0]?.image || '/images/default.png' %>"
+      <!--        <img src="<%= featuredProducts[0]?.image || '/images/default.png' %>"
              alt="<%= featuredProducts[0]?.name || '추천 과일' %>"
              style="width:100%; border-radius:10px;">
--->        <img src="/images/default.png"
-             alt="추천 과일"
-             style="width:10%; border-radius:10px;">
-           <div id="banner-text"
-                style="margin-top: 15px; font-size: 1.2em; color: #333;">
-               🍓 오늘의 신선한 과일을 만나보세요!
-           </div>
+--> <img src="/images/default.png" alt="추천 과일" style="width:10%; border-radius:10px;">
+      <div id="banner-text" style="margin-top: 15px; font-size: 1.2em; color: #333;">
+        🍓 오늘의 신선한 과일을 만나보세요!
+      </div>
 
     </div>
-</section>
-    <div>
-        <h2 style="text-align: center;margin-top:30px; font-size:1.3em;">
-            🍇 오늘의 추천 과일 만나보세요 🍊
-        </h2>
+  </section>
+  <div>
+    <h2 style="text-align: center;margin-top:30px; font-size:1.3em;">
+      🍇 오늘의 추천 과일 만나보세요 🍊
+    </h2>
 
-    </div>
+  </div>
 
-<section>
+  <section>
     <div style="margin-top:60px; text-align:center; ">
-        <a href="/products" class="shop-now-btn">바로 쇼핑하기 →</a>
+      <a href="/products" class="shop-now-btn">바로 쇼핑하기 →</a>
     </div>
-</section>
+  </section>
 
-<main>
-  <h2 style="text-align: center; font-size: 1.5em; margin-top: 20px;">🔥 인기 상품</h2>
+  <main>
+    <h2 style="text-align: center; font-size: 1.5em; margin-top: 20px;">🔥 인기 상품</h2>
 
     <!-- 🔧 3. 2개 상품을 3초 간격으로 슬라이드로 표시 -->
     <div id="featured-container">
-      <% for (let i = 0; i < featuredProducts.length; i += 2) { %>
+      <% for (let i=0; i < featuredProducts.length; i +=2) { %>
         <div class="featured-slide <%= i === 0 ? 'active' : '' %>">
-          <% for (let j = i; j < i + 2 && j < featuredProducts.length; j++) { %>
+          <% for (let j=i; j < i + 2 && j < featuredProducts.length; j++) { %>
             <div class="product-card">
-          <!--    <img src="<%= featuredProducts[j].image %>" alt="<%= featuredProducts[j].name %>"> -->
-              <img src="/images/<%= featuredProducts[j].image || 'default.png' %>"
-                   alt="<%= featuredProducts[j].name %>"
-                   style="width: 120px; height: 120px; object-fit: cover;">
-                <h3><%= featuredProducts[j].emoji %> <%= featuredProducts[j].name %></h3>
-              <p><%= featuredProducts[j].description %></p>
+              <!--    <img src="<%= featuredProducts[j].image %>" alt="<%= featuredProducts[j].name %>"> -->
+              <img src="/images/<%= featuredProducts[j].image || 'default.png' %>" alt="<%= featuredProducts[j].name %>"
+                style="width: 120px; height: 120px; object-fit: cover;">
+              <h3>
+                <%= featuredProducts[j].emoji %>
+                  <%= featuredProducts[j].name %>
+              </h3>
+              <p>
+                <%= featuredProducts[j].description %>
+              </p>
               <strong>₩<%= featuredProducts[j].price.toLocaleString() %></strong>
 
               <form action="/cart/add" method="POST">
@@ -136,15 +121,16 @@
                 <button type="submit" class="cart-button">🛒 장바구니 담기</button>
               </form>
             </div>
-          <% } %>
+            <% } %>
         </div>
-      <% } %>
+        <% } %>
     </div>
 
-</main>
+  </main>
 
-<footer>
-  <p>&copy; 2025 쇼핑몰 예시. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 쇼핑몰 예시. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>

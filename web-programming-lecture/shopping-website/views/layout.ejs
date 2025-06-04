@@ -19,7 +19,6 @@
         </svg>
     </a>
 
-
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/products" class="nav-link px-2 link-dark">상품 목록</a></li>
         <li><a href="#" class="nav-link px-2 link-dark">공지사항</a></li>
@@ -28,9 +27,18 @@
         <li><a href="#" class="nav-link px-2 link-dark">위시리스트</a></li>
     </ul>
 
+
     <div class="col-md-3 text-end">
-        <a href="/login" class="btn btn-outline-primary me-2">로그인</a>
-        <a href="/register" class="btn btn-primary">회원가입</a>
+        <% if (!user) { %>
+            <a href="/login" class="btn btn-outline-primary me-2">로그인</a>
+            <a href="/user/register" class="btn btn-primary">회원가입</a>
+            <% } else { %>
+                <span style="margin-right: 10px;">
+                    <%= user.username %>님 환영합니다!
+                        <!-- TODO: 마이페이지 만들기 -->
+                </span>
+                <a href="/user/logout" class="btn btn-outline-primary me-2">로그아웃</a>
+                <% } %>
     </div>
 </header>
 

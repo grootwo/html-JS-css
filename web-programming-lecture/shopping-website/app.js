@@ -12,12 +12,15 @@ const userRouter = require('./routes/user');
 const productRouter = require('./routes/products');
 const cartRouter = require('./routes/cart');
 const orderRouter = require('./routes/order');
+var expressLayouts = require('express-ejs-layouts');
+var express = require('express');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -38,25 +41,25 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/user',userRouter);
+app.use('/user', userRouter);
 app.use('/board', boardRouter);
-app.get('/login', (req,res)=> {
+app.get('/login', (req, res) => {
   res.redirect('/user/login');
 });
-app.use('/products',productRouter);
+app.use('/products', productRouter);
 app.use('/cart', cartRouter);
-app.use('/order',orderRouter);
+app.use('/order', orderRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

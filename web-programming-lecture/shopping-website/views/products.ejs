@@ -3,40 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>상품목록</title>
+  <title>상품 목록</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <style>
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    .product-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
+    a {
+      text-decoration: none;
+      color: black;
     }
 
-    .product-card img {
-      width: 100%;
-      max-height: 120px;
+    a:hover {
+      color: cornflowerblue;
+    }
+
+    img {
       object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .info-bar {
-      margin: 15px 0;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-
-    .info-bar a {
-      margin-left: 10px;
-      font-size: 0.95em;
-      color: #2563eb;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -66,11 +53,11 @@
   <!-- ✅ 상품 수 + 전체 목록 보기 -->
   <section class="info-bar">
     현재 등록된 상품 수: <%= allProducts.length %>개
-      <a href="/products/all">전체 목록 보기</a>
+      <!-- <a href="/products/all">전체 목록 보기</a> -->
   </section>
 
   <section>
-    <h2>🍓 오늘의 과일 추천</h2>
+    <h2>추천 식물</h2>
     <div class="product-grid">
       <% featuredProducts.forEach(product=> { %>
         <div class="product-card">
@@ -96,6 +83,31 @@
     </div>
   </section>
 
+  <section>
+    <div class="product-grid">
+      <% allProducts.forEach(p=> { %>
+        <a href="/products/<%= product.id %>">
+          <div class="card m-1">
+            <img class='img-thumbnail' src="<%= p.thumbnail %>" />
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                <%= p.name %>
+              </h5>
+              <% if (p.is_featured===1) { %>
+                <span style="color: #facc15; font-size: 0.9em;">⭐ 추천</span>
+                <% } %>
+                  <p class="card-text">
+                    <strong>₩<%= p.price.toLocaleString() %></strong>
+                  </p>
+                  <form action="/cart/add" method="POST">
+                    <input type="hidden" name="productId" value="<%= p.id %>">
+                    <button type="submit" class="cart-button">🛒 장바구니 담기</button>
+                  </form>
+            </div>
+          </div>
+        </a>
+        <% }) %>
+  </section>
 </body>
 
 </html>

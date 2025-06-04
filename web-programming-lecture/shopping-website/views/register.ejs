@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-            background-color: #f4f4f4;
-        }
-        h2 {
-            color: #333;
-        }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 400px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
         input {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
             box-sizing: border-box;
         }
+
         button {
             width: 100%;
             background-color: #4CAF50;
@@ -37,22 +24,74 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
+
 <body>
-    <a href="/" style="display:inline-block; margin-bottom:10px; color:#2563eb; text-decoration:underline;">🏠 메인으로 돌아가기
-    </a>
-
-    <h2>회원가입</h2>
     <form action="/user/register" method="post">
-        <input type="text" name="username" placeholder="아이디" required><br>
-        <input type="text" name="name" placeholder="이름" required><br>
-        <input type="password" name="password" placeholder="비밀번호" required><br>
-        <button type="submit">가입하기</button>
-    </form>
+        <div class="container py-2 h-30">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-bright text-black" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
 
+                            <div class=" pb-2">
+
+                                <h2 class="fw-bold mb-5 text-uppercase">회원가입</h2>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="text" name="username" id="typeEmailX"
+                                        class="form-control form-control-lg" placeholder="아이디" required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="text" name="name" class="form-control form-control-lg" placeholder="이름"
+                                        required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="password" name="password" id="pw1" class="form-control form-control-lg"
+                                        placeholder="비밀번호" required />
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="password" name="password-confirm" id="pw2"
+                                        class="form-control form-control-lg" placeholder="비밀번호 재입력" required />
+                                </div>
+
+                                <div id="passwordHelpBlock" class="form-text">
+                                    비밀번호는 최소 8자, 최대 20자로 설정해야 하며, 영문자와 숫자만 조합하여야 합니다.
+                                </div>
+
+                                <button class="btn btn-primary btn-lg px-5" type="submit" style="margin-top: 30px;"
+                                    onclick="return validatePassword()">가입하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
+
+<script>
+    function validatePassword() {
+        console.log('confirmPassword 실행')
+        pw1 = document.getElementById('pw1').value;
+        pw2 = document.getElementById('pw2').value;
+        console.log(pw1);
+        console.log(pw2);
+        if (pw1 == pw2) {
+            return true;
+        } else {
+            alert('입력한 비밀번호가 일치하지 않습니다. 다시 작성해주세요.')
+            return false;
+        }
+    }
+</script>
+
 </html>

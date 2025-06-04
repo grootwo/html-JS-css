@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
     if (!user) return res.redirect('/login');
 
     const query = `
-    SELECT p.id, p.name, p.price, p.emoji, p.image, c.quantity
+    SELECT p.id, p.name, p.price, p.difficulty, p.thumbnail, c.quantity
     FROM cart_items c
     JOIN products p ON c.product_id = p.id
     WHERE c.user_id = ?`;

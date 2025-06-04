@@ -65,10 +65,10 @@
       <% products.forEach(p=> { %>
         <div class="product-card">
 
-          <img src="/images/<%= p.image || 'default.jpg' %>" alt="<%= p.name %>">
+          <img src="<%= p.thumbnail%>" alt="<%= p.name %>">
 
           <h3>
-            <%= p.emoji %>
+            <%= p.difficulty %>
               <%= p.name %>
                 <% if (p.is_featured===1) { %>
                   <span style="color: #facc15; font-size: 0.9em;">⭐ 추천</span>

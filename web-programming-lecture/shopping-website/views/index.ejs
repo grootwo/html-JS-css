@@ -75,7 +75,7 @@
       <!--        <img src="<%= featuredProducts[0]?.image || '/images/default.png' %>"
              alt="<%= featuredProducts[0]?.name || '추천 과일' %>"
              style="width:100%; border-radius:10px;">
---> <img src="/images/default.png" alt="추천 과일" style="width:10%; border-radius:10px;">
+-->
       <div id="banner-text" style="margin-top: 15px; font-size: 1.2em; color: #333;">
         🍓 오늘의 신선한 과일을 만나보세요!
       </div>
@@ -105,10 +105,10 @@
           <% for (let j=i; j < i + 2 && j < featuredProducts.length; j++) { %>
             <div class="product-card">
               <!--    <img src="<%= featuredProducts[j].image %>" alt="<%= featuredProducts[j].name %>"> -->
-              <img src="/images/<%= featuredProducts[j].image || 'default.png' %>" alt="<%= featuredProducts[j].name %>"
+              <img src="<%= featuredProducts[j].thumbnail%>" alt="<%= featuredProducts[j].name %>"
                 style="width: 120px; height: 120px; object-fit: cover;">
               <h3>
-                <%= featuredProducts[j].emoji %>
+                <%= featuredProducts[j].difficulty %>
                   <%= featuredProducts[j].name %>
               </h3>
               <p>

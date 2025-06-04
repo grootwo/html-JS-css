@@ -75,10 +75,10 @@
       <% featuredProducts.forEach(product=> { %>
         <div class="product-card">
 
-          <img src="/images/<%= product.image || 'default.jpg' %>" alt="<%= product.name %>">
+          <img src="<%= product.thumbnail %>" alt="<%= product.name %>">
 
           <h3>
-            <%= product.emoji %>
+            <%= product.difficulty %>
               <%= product.name %>
           </h3>
           <p>

@@ -15,19 +15,15 @@ db.serialize(() => {
 
         if (row.count === 0) {
             const stmt = db.prepare(`
-        INSERT INTO products (name, description, price, emoji, image, likes, is_featured)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO products (name, description, price, thumbnail, descriptionImage, likes, is_featured, difficulty)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       `);
 
             const products = [
-                ['사과', '신선한 국내산 사과', 2000, '🍎', '/images/apple.png', 40, 1],
-                ['바나나', '달콤한 수입 바나나', 1500, '🍌', '/images/banana.png', 35, 1],
-                ['포도', '탱글탱글한 포도', 3000, '🍇', '/images/grape.png', 28, 1],
-                ['오렌지', '비타민 가득 오렌지', 2500, '🍊', '/images/orange.png', 21, 1],
-                ['키위', '상큼한 뉴질랜드 키위', 2800, '🥝', '/images/kiwi.png', 15, 0],
-                ['복숭아', '달콤한 복숭아', 3500, '🍑', '/images/peach.png', 18, 0],
-                ['레몬', '상큼한 레몬', 2000, '🍋', '/images/lemon.png', 12, 0],
-                ['수박', '무더운 여름엔 수박!', 8000, '🍉', '/images/watermelon.png', 25, 0],
+                ['무늬 보스턴 고사리', '15cm(대품)로 행잉 화분에 담아 보내드립니다.', 50000, '/images/고사리1.png', '/images/고사리2.png', 22, 1, 4],
+                ['박쥐란', '잔털은 먼지가 아니니 닦아내면 안됩니다.', 10000, '/images/박쥐란1.png', '/images/박쥐란2.png', 54, 1, 5],
+                ['백묘국', '6 ~ 9월에 개화합니다. 비가 많이 오는 경우 개화하지 않을 수도 있습니다.', 3000, '/images/백묘국1.png', '/images/백묘국2.png', 43, 0, 3],
+                ['그레이스 캄파눌라', '습한 토양과 반그늘을 좋아합니다.', 10000, '/images/캄파눌라1.png', '/images/캄파눌라2.png', 32, 0, 3],
             ];
 
             for (const product of products) {
@@ -35,7 +31,7 @@ db.serialize(() => {
             }
 
             stmt.finalize(() => {
-                console.log('🍓 8개의 과일 상품 데이터 삽입 완료');
+                console.log('식물 상품 데이터 삽입 완료');
                 db.close();
             });
         } else {

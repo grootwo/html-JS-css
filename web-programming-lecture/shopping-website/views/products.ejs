@@ -116,7 +116,7 @@
             <img class="thumbnail" src="<%= p.thumbnail %>" />
             <!-- TODO: 위시리스트 추가 -->
             <% if (p.is_featured===1) { %>
-              <i class="bi bi-stars isFeaturedIcon" style="color: yellow;"></i>
+              <i class="bi bi-stars text-warning isFeaturedIcon"></i>
               <% } %>
                 <form class="whishListButton" action="#" method="POST">
                   <input type="hidden" name="productId" value="<%= p.id %>">

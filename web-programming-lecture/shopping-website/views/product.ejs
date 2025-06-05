@@ -30,22 +30,23 @@
                 <div>
                     <h2 class="mb-3">
                         <%= product.name %>
+                            <% if (product.is_featured===1) { %>
+                                <i class="bi bi-stars text-warning isFeaturedIcon"></i>
+                                <% } %>
                     </h2>
-                    <p class="mb-4">
-                        <%= product.description %>
-                    </p>
+                    <% if (product.is_featured===1) { %>
+                        <p class="text-muted mb-4">이번 계절 추천 식물</p>
+                        <% } %>
+                            <p class="mb-4">
+                                <%= product.description %>
+                            </p>
                 </div>
                 <div>
                     <div class="mb-3">
-                        <p><i class="bi bi-star-fill"></i> 키우기 난이도</p>
-                        <% for (var i=0; i < product.difficulty; i++){%>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <% } %>
-                                <% for (var i=0; i < 5 - product.difficulty; i++){%>
-                                    <i class="bi bi-star text-warning"></i>
-                                    <% } %>
-                                        <p><i class="bi bi-heart-fill"></i> 좋아요 <%= product.likes %>
-                                        </p>
+                        <p><i class="bi bi-star"></i> 키우기 난이도: <%= product.difficulty %>
+                        </p>
+                        <p><i class="bi bi-heart"></i> 좋아요: <%= product.likes %>
+                        </p>
                     </div>
                 </div>
                 <div>
@@ -54,16 +55,19 @@
                             <%= product.price.toLocaleString() %>원
                         </span>
                     </div>
-                    <div class="mb-4">
+                    <!-- <div class="mb-4">
                         <label for="quantity" class="form-label">수량:</label>
                         <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">
-                    </div>
-                    <button class="btn btn-primary btn-lg mb-3 me-2">
-                        <i class="bi bi-cart-plus"></i> 장바구니에 담기
-                    </button>
+                    </div> -->
                     <button class="btn btn-outline-secondary btn-lg mb-3">
                         <i class="bi bi-heart"></i> 위시리스트에 담기
                     </button>
+                    <form action="/cart/add" method="POST">
+                        <input type="hidden" name="productId" value="<%= product.id %>">
+                        <button class="btn btn-primary btn-lg mb-3 me-2" type="submit">
+                            <i class="bi bi-cart-plus"></i> 장바구니에 담기
+                        </button>
+                    </form>
                 </div>
             </div>
 

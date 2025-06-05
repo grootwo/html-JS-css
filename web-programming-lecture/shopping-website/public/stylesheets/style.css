@@ -36,10 +36,6 @@ nav a {
   text-decoration: none;
 }
 
-.banner img {
-  max-width: 100%;
-  display: block;
-}
 
 .product-grid {
   display: flex;
@@ -76,23 +72,6 @@ nav a {
   display: flex;
 }
 
-.banner {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.banner h2 {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2em;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
 .shop-now-btn {
   background-color: #f59e0b;
   color: white;
@@ -103,17 +82,6 @@ nav a {
 
 .shop-now-btn:hover {
   background-color: #d97706;
-}
-
-.banner-text-wrapper {
-  overflow: hidden;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.banner-text-slider {
-  display: flex;
-  animation: scrollText 16s linear infinite;
 }
 
 .text-item {

@@ -50,65 +50,47 @@
       font-size: 30px;
       text-shadow: 0px 0px 5px gray;
     }
+
+    .recommendProductSpan {
+      color: white;
+      text-shadow: 0px 0px 7px black;
+      bottom: 10px;
+      left: 10px;
+      position: absolute;
+    }
+
+    section>h2,
+    section>p {
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>📦 상품 목록</h1>
-    <nav>
-      <a href="/">홈</a>
-      <a href="/products">상품목록</a>
-      <a href="/cart">장바구니</a>
-      <a href="/board">고객센터</a>
-    </nav>
-  </header>
-
-  <!-- 로그인 상태 표시 -->
-  <section class="info-bar">
-    <% if (user) { %>
-      <p>
-        <%= user.name %>님, 환영합니다!
-      </p>
-      <% } else { %>
-        <p>🛑 로그인 후 장바구니를 사용할 수 있습니다.</p>
-        <% } %>
-  </section>
-
-  <!-- ✅ 상품 수 + 전체 목록 보기 -->
-  <section class="info-bar">
-    현재 등록된 상품 수: <%= allProducts.length %>개
-      <!-- <a href="/products/all">전체 목록 보기</a> -->
-  </section>
-
   <section>
-    <h2>추천 식물</h2>
+    <h2>추천 식물 목록</h2>
     <div class="product-grid">
-      <% featuredProducts.forEach(product=> { %>
-        <div class="product-card">
-
-          <img src="<%= product.thumbnail %>" alt="<%= product.name %>">
-
-          <h3>
-            <%= product.difficulty %>
-              <%= product.name %>
-          </h3>
-          <p>
-            <%= product.description %>
-          </p>
-          <strong>₩<%= product.price.toLocaleString() %></strong>
-
-          <!-- ✅ 장바구니 폼 추가 -->
-          <form action="/cart/add" method="POST">
-            <input type="hidden" name="productId" value="<%= product.id %>">
-            <button type="submit" class="cart-button">🛒 장바구니 담기</button>
-          </form>
-        </div>
+      <% featuredProducts.forEach(p=> { %>
+        <a href="/products/<%= p.id %>">
+          <div class="card m-1">
+            <img class="thumbnail" src="<%= p.thumbnail %>" />
+            <!-- TODO: 위시리스트 추가 -->
+            <form class="whishListButton" action="#" method="POST">
+              <input type="hidden" name="productId" value="<%= p.id %>">
+              <button type="submit" style="color: white;""><i class=" bi bi-heart"></i></button>
+            </form>
+            <span class="recommendProductSpan">
+              <%= p.name %>
+            </span>
+          </div>
+        </a>
         <% }) %>
     </div>
   </section>
 
   <section>
+    <h2>전체 식물 목록</h2>
+    <p>현재 등록된 전체 상품: <%= allProducts.length %>개</p>
     <div class="product-grid">
       <% allProducts.forEach(p=> { %>
         <a href="/products/<%= p.id %>">
@@ -129,10 +111,6 @@
                   <p class="card-text">
                     ₩<%= p.price.toLocaleString() %>
                   </p>
-                  <form action="/cart/add" method="POST">
-                    <input type="hidden" name="productId" value="<%= p.id %>">
-                    <button type="submit" class="cart-button">🛒 장바구니 담기</button>
-                  </form>
                 </div>
           </div>
         </a>

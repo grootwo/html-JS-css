@@ -20,18 +20,6 @@ router.get('/', (req, res) => {
     });
 });
 
-// ✅ 전체 상품 목록만 보여주는 페이지
-router.get('/all', (req, res) => {
-    db.all('SELECT * FROM products', (err, rows) => {
-        if (err) return res.status(500).send('전체 상품 목록 불러오기 실패');
-
-        res.render('products_all', {
-            products: rows,
-            user: req.session.user
-        });
-    });
-});
-
 // 상품 상세 페이지
 router.get('/:id', (req, res) => {
     const id = req.params.id;

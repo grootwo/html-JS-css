@@ -31,24 +31,29 @@
                     <h2 class="mb-3">
                         <%= product.name %>
                     </h2>
-                    <div class="mb-3">
-                        <span class="h4 me-2">
-                            <%= product.price %>원
-                        </span>
-                    </div>
-                    <div class="mb-3">
-                        <i class="bi bi-star-fill text-warning"></i>
-                        <i class="bi bi-star-fill text-warning"></i>
-                        <i class="bi bi-star-fill text-warning"></i>
-                        <i class="bi bi-star-fill text-warning"></i>
-                        <i class="bi bi-star-half text-warning"></i>
-                        <span class="ms-2">키우기 난이도 4.5</span>
-                    </div>
                     <p class="mb-4">
                         <%= product.description %>
                     </p>
                 </div>
                 <div>
+                    <div class="mb-3">
+                        <p><i class="bi bi-star-fill"></i> 키우기 난이도</p>
+                        <% for (var i=0; i < product.difficulty; i++){%>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <% } %>
+                                <% for (var i=0; i < 5 - product.difficulty; i++){%>
+                                    <i class="bi bi-star text-warning"></i>
+                                    <% } %>
+                                        <p><i class="bi bi-heart-fill"></i> 좋아요 <%= product.likes %>
+                                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <span class="h5 me-2">
+                            <%= product.price.toLocaleString() %>원
+                        </span>
+                    </div>
                     <div class="mb-4">
                         <label for="quantity" class="form-label">수량:</label>
                         <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">

@@ -20,32 +20,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>고객센터 게시판</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-    }
-
-    h2 {
-      color: #333;
-    }
-
-    a {
-      text-decoration: none;
-      color: #007BFF;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 10px 0;
+    table {
+      width: 1000px;
     }
   </style>
 </head>
@@ -61,6 +39,38 @@
   </header>
 
   <main>
+    <table class="table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">작성일</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <% posts.forEach(post=> { %>
+          <a href="/board/view/<%= post.id %>">
+            <tr>
+              <th scope="row">
+                <%= post.id %>
+              </th>
+              <td>
+                <a href="/board/view/<%= post.id %>">
+                  <%= post.title %>
+                </a>
+              </td>
+              <td>
+                <%= post.author %>
+              </td>
+              <td>
+                <%= post.created_at %>
+              </td>
+            </tr>
+            <% }) %>
+      </tbody>
+    </table>
+
     <ul>
       <% posts.forEach(post=> { %>
         <li style="margin-left:<%= post.parent_id ? '30px' : '0' %>">

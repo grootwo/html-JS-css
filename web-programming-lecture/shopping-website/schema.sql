@@ -16,6 +16,14 @@ CREATE TABLE IF NOT EXISTS posts (
                                      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 파일 테이블
+CREATE TABLE IF NOT EXISTS files (
+                                     id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                     post_id INTEGER,
+                                     filename TEXT NOT NULL,
+                                     filepath TEXT NOT NULL
+);
+
 --  상품목록 테이블
 CREATE TABLE IF NOT EXISTS products (
                                         id INTEGER PRIMARY KEY AUTOINCREMENT,

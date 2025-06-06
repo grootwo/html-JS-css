@@ -27,13 +27,13 @@ router.get('/', (req, res) => {
         COALESCE(parent_id, id), id ASC
     `, [], (err, posts) => {
         if (err) return res.send('목록 불러오기 실패');
-        res.render('board', { title: '고객센터 게시판',posts });
+        res.render('board', { title: '고객센터 게시판', posts });
     });
 });
 
 // 글쓰기 폼
 router.get('/new', (req, res) => {
-    res.render('post', {post: null, parentId: null });
+    res.render('post', { post: null, parentId: null });
 });
 
 // 글쓰기 처리
@@ -101,7 +101,7 @@ router.get('/view/:id', (req, res) => {
         if (err || !post) return res.send('글 없음');
 
         db.all('SELECT * FROM files WHERE post_id = ?', [postId], (ferr, files) => {
-            res.render('detail', { post, files:[] });
+            res.render('detail', { post, files: files });
         });
     });
 });
@@ -140,7 +140,7 @@ router.post('/create', (req, res) => {
 router.get('/edit/:id', (req, res) => {
     db.get('SELECT * FROM posts WHERE id = ?', [req.params.id], (err, post) => {
         if (err || !post) return res.send('글 없음');
-        res.render('edit',{ post });
+        res.render('edit', { post });
         //res.render('post', { post });
     });
 });

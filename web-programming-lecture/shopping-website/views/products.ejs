@@ -62,6 +62,12 @@
     section>p {
       text-align: center;
     }
+
+    .productList {
+      display: grid;
+      grid-template-columns: 320px 320px 320px 320px;
+      justify-content: space-between;
+    }
   </style>
 </head>
 
@@ -90,11 +96,11 @@
   <section>
     <h2>전체 식물 목록</h2>
     <p>현재 등록된 전체 상품: <%= allProducts.length %>개</p>
-    <div class="product-grid">
+    <div class="productList">
       <% allProducts.forEach(p=> { %>
-        <a href="/products/<%= p.id %>">
+        <a href="/products/<%= p.id %>" class="mb-3">
           <div class="card m-1">
-            <img class="thumbnail" src="<%= p.thumbnail %>" />
+            <img class="thumbnail" src="<%= p.thumbnail %>" style="height: 300px;" />
             <!-- TODO: 위시리스트 추가 -->
             <% if (p.is_featured===1) { %>
               <i class="bi bi-stars text-warning isFeaturedIcon"></i>
@@ -114,6 +120,7 @@
           </div>
         </a>
         <% }) %>
+    </div>
   </section>
 </body>
 

@@ -1,78 +1,107 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>장바구니</title>
     <style>
-        body {
-            font-family: sans-serif;
-            padding: 20px;
-        }
-        h2 {
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 12px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .item-line {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px; /* 아이템과 삭제버튼 사이 간격 */
-        }
-        .delete-button {
-            background-color: #e53e3e;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .delete-button:hover {
-            background-color: #c53030;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #2563eb;
-        }
     </style>
 </head>
+
 <body>
-<h2>🛒 <%= user.name %>님의 장바구니</h2>
+    <div class="container py-5">
+        <h1 class="mb-5">
+            <%= user.name %>님의 장바구니
+        </h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <% if (cartItems.length===0) { %>
+                    <h3>장바구니가 비어 있습니다.</h3>
+                    <% } else { %>
+                        <!-- Cart Items -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <% cartItems.forEach(item=> { %>
+                                    <div class="row cart-item mb-3">
+                                        <div class="col-md-3">
+                                            <img src="<%= item.thumbnail %>" alt="Product 1" class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <h5 class="card-title">
+                                                <%= item.name %>
+                                            </h5>
+                                            <p class="text-muted">Category: Electronics</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <form class="input-group" action="/cart/update" method="POST">
+                                                <input type="hidden" name="productId" value="<%= item.id %>">
+                                                <button class="btn btn-outline-secondary btn-sm" type="submit"
+                                                    name="action" value="decrease">-</button>
+                                                <input style="max-width:100px" type="text"
+                                                    class="form-control  form-control-sm text-center quantity-input"
+                                                    value="<%= item.quantity %>">
+                                                <button class="btn btn-outline-secondary btn-sm" type="submit"
+                                                    name="action" value="increase">+</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-2 text-end">
+                                            <p class="fw-bold">
+                                                ₩<%= item.price.toLocaleString() %>
+                                            </p>
+                                            <form action="/cart/delete" method="POST" style="display: inline;">
+                                                <input type="hidden" name="productId" value="<%= item.id %>">
+                                                <button class="btn btn-sm btn-outline-danger" type="submit">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                        </div>
+                        <% } %>
+                            <!-- Continue Shopping Button -->
+                            <div class="text-start mb-4">
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+                                </a>
+                            </div>
+            </div>
+            <div class="col-lg-4">
+                <!-- Cart Summary -->
+                <div class="card cart-summary">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Order Summary</h5>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Subtotal</span>
+                            <span>$199.97</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Shipping</span>
+                            <span>$10.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Tax</span>
+                            <span>$20.00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4">
+                            <strong>Total</strong>
+                            <strong>$229.97</strong>
+                        </div>
+                        <button class="btn btn-primary w-100">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
 
-<% if (cartItems.length === 0) { %>
-    <p>장바구니가 비어 있습니다.</p>
-<% } else { %>
-    <ul>
-       <% cartItems.forEach(item => { %>
-           <li>
-             <%= item.emoji %> <%= item.name %> - ₩<%= item.price.toLocaleString() %> ×
-             <form action="/cart/update" method="POST" style="display: inline;">
-               <input type="hidden" name="productId" value="<%= item.id %>">
-               <button type="submit" name="action" value="decrease">➖</button>
-               <span><%= item.quantity %></span>
-               <button type="submit" name="action" value="increase">➕</button>
-             </form>
-             <form action="/cart/delete" method="POST" style="display: inline;">
-               <input type="hidden" name="productId" value="<%= item.id %>">
-               <button type="submit">🗑 삭제</button>
-             </form>
-           </li>
-         <% }) %>
-    </ul>
-<% } %>
-
-<p><a href="/products">← 상품 계속 보기</a></p>
-<form action="/order/confirm" method="POST" style="margin-top: 20px;">
-    <button type="submit" class="btn btn-primary">✅ 주문하기</button>
-</form>
+        <p><a href="/products">← 상품 계속 보기</a></p>
+        <form action="/order/confirm" method="POST" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary">✅ 주문하기</button>
+        </form>
+    </div>
 </body>
+
 </html>

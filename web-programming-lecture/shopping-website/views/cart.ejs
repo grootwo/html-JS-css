@@ -8,7 +8,30 @@
     </style>
 </head>
 
-<body>
+<script>
+    let cartPrice = 0;
+    let totalPrice = 0;
+    // 장바구니 가격 측정
+    function calcCartPrice() {
+        console.log('calcTotalPrice')
+        let elements = document.getElementsByClassName('productPrice');
+        let cartPriceElement = document.getElementById('cartPrice');
+        for (var i = 0; i < elements.length; i++) {
+            cartPrice += parseInt(elements[i].innerText);
+            console.log(i.toString() + ': ' + cartPrice.toString());
+        }
+        cartPriceElement.innerHTML = '₩' + cartPrice.toLocaleString();
+        calcTotalPrice();
+    }
+    // 총 가격 측정
+    function calcTotalPrice() {
+        totalPrice = cartPrice + 3000;
+        let totalPriceElement = document.getElementById('totalPrice');
+        totalPriceElement.innerHTML = '₩' + totalPrice.toLocaleString();
+    }
+</script>
+
+<body onload="calcCartPrice()">
     <div class="container py-5">
         <h1 class="mb-5">
             <%= user.name %>님의 장바구니
@@ -16,7 +39,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <% if (cartItems.length===0) { %>
-                    <h3>장바구니가 비어 있습니다.</h3>
+                    <h3 class="mb-3">장바구니가 비어 있습니다.</h3>
                     <% } else { %>
                         <!-- Cart Items -->
                         <div class="card mb-4">
@@ -30,7 +53,6 @@
                                             <h5 class="card-title">
                                                 <%= item.name %>
                                             </h5>
-                                            <p class="text-muted">Category: Electronics</p>
                                         </div>
                                         <div class="col-md-2">
                                             <form class="input-group" action="/cart/update" method="POST">
@@ -54,6 +76,9 @@
                                                     <i class="bi bi-trash"></i>
                                                 </button>
                                             </form>
+                                            <p class="fw-bold productPrice" style="display: none;">
+                                                <%= item.price * item.quantity %>
+                                            </p>
                                         </div>
                                     </div>
                                     <% }) %>
@@ -62,8 +87,8 @@
                         <% } %>
                             <!-- Continue Shopping Button -->
                             <div class="text-start mb-4">
-                                <a href="#" class="btn btn-outline-primary">
-                                    <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+                                <a href="/products" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-2"></i>상품 계속 보기
                                 </a>
                             </div>
             </div>
@@ -71,36 +96,27 @@
                 <!-- Cart Summary -->
                 <div class="card cart-summary">
                     <div class="card-body">
-                        <h5 class="card-title mb-4">Order Summary</h5>
+                        <h5 class="card-title mb-4">주문 요약</h5>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>Subtotal</span>
-                            <span>$199.97</span>
+                            <span>장바구니 총 가격</span>
+                            <span id="cartPrice">0</span>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
-                            <span>Shipping</span>
-                            <span>$10.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span>Tax</span>
-                            <span>$20.00</span>
+                            <span>배송비</span>
+                            <span> ₩3,000</span>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between mb-4">
-                            <strong>Total</strong>
-                            <strong>$229.97</strong>
+                            <strong>총 가격</strong>
+                            <strong id="totalPrice">0</strong>
                         </div>
-                        <button class="btn btn-primary w-100">Proceed to Checkout</button>
+                        <form action="/order/confirm" method="POST" style="margin-top: 20px;">
+                            <button class="btn btn-primary w-100" type="submit">주문하기</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-
-        <p><a href="/products">← 상품 계속 보기</a></p>
-        <form action="/order/confirm" method="POST" style="margin-top: 20px;">
-            <button type="submit" class="btn btn-primary">✅ 주문하기</button>
-        </form>
     </div>
 </body>
 

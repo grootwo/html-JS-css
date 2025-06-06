@@ -17,32 +17,49 @@
 
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <title>답글 작성</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-    }
     form {
-      width: 500px;
+      margin: 100px;
     }
-    input[type="text"], textarea {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-    }
-    button {
-      padding: 8px 16px;
-      margin-top: 10px;
+
+    h2 {
+      text-align: center;
     }
   </style>
 </head>
+
 <body>
 
-  <h2>답글 작성</h2>
-  <p>📝 원글 제목: <strong><%= parentTitle %></strong></p>
+  <h2>원글 '<strong>
+      <%= parentTitle %>
+    </strong>'에 대한 답글 작성</h2>
+
+  <form action="/board/create" method="POST">
+    <input type="hidden" name="parent_id" value="<%= parentId %>">
+
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="form4Example1">작성자</label>
+      <input type="text" id="author" name="author" required class="form-control" required />
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="form4Example1">제목</label>
+      <input type="text" id="title" name="title" id="form4Example1" class="form-control" required />
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="form4Example3">내용</label>
+      <textarea id="content" name="content" class="form-control" rows="8"></textarea>
+    </div>
+
+    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mt-4">
+      답글 등록
+    </button>
+  </form>
 
   <form action="/board/create" method="POST">
     <!-- 부모 글 ID를 숨겨서 서버에 전달 -->
@@ -63,4 +80,5 @@
   <p><a href="/board">[목록으로 돌아가기]</a></p>
 
 </body>
+
 </html>

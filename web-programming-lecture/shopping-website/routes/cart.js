@@ -44,7 +44,6 @@ router.get('/', (req, res) => {
 
 //장바구니 수량 조절
 router.post('/update', (req, res) => {
-    console.log('수량 업데이트 요청 도작', req.body);
     if (!req.session.user) {
         return res.redirect('/login_required'); //로그인 한 사용자만 수량 변경 가능
     }
@@ -74,7 +73,6 @@ router.post('/update', (req, res) => {
             db.run(`UPDATE cart_items SET quantity = ? WHERE user_id = ? AND product_id = ?`, [newQuantity, userId, productId], (err) => {
                 return res.redirect('/cart');
             });
-            console.log('🧾 업데이트 후 수량:', newQuantity);
 
         }
     });

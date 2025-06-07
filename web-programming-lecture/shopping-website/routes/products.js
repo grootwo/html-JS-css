@@ -26,7 +26,6 @@ router.get('/:id', (req, res) => {
     db.all('SELECT * FROM products WHERE id = ' + id.toString(), (err, products) => {
         if (err) return res.status(500).send('DB 오류: 선택 상품 조회 실패');
 
-        console.log(products)
         res.render('product', {
             product: products[0],
             user: req.session.user

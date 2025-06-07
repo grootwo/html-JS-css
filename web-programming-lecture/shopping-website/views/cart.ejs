@@ -13,12 +13,10 @@
     let totalPrice = 0;
     // 장바구니 가격 측정
     function calcCartPrice() {
-        console.log('calcTotalPrice')
         let elements = document.getElementsByClassName('productPrice');
         let cartPriceElement = document.getElementById('cartPrice');
         for (var i = 0; i < elements.length; i++) {
             cartPrice += parseInt(elements[i].innerText);
-            console.log(i.toString() + ': ' + cartPrice.toString());
         }
         cartPriceElement.innerHTML = '₩' + cartPrice.toLocaleString();
         calcTotalPrice();

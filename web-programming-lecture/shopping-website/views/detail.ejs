@@ -38,6 +38,16 @@
       <% } %>
   </div>
 
+  <div class="container">
+    <% if (post.parent_id !=null) { %>
+      <div class="text-start mb-4">
+        <a class="btn btn-outline-secondary" href="/board/view/<%= post.parent_id %>">
+          <i class="bi bi-arrow-left me-2"></i>원글 보러 가기
+        </a>
+      </div>
+      <% } %>
+  </div>
+
   <div class="container mt-3 mb-5">
     <div class="btn-group" role="group" aria-label="Basic outlined example">
       <a href="/board/reply/<%= post.id %>" type="button" class="btn btn-outline-primary">답글</a>

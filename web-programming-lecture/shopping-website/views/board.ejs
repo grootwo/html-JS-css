@@ -55,7 +55,10 @@
             </th>
             <td>
               <a class="table-row" href="/board/view/<%= post.id %>">
-                <%= post.title %>
+                <% if (post.parent_id !=null) {%>
+                  <i class="bi bi-arrow-return-right"> </i>
+                  <% } %>
+                    <%= post.title %>
               </a>
             </td>
             <td>

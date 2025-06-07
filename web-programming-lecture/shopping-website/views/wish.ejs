@@ -8,9 +8,6 @@
     </style>
 </head>
 
-<script>
-</script>
-
 <body>
     <div class="container py-5">
         <h1 class="mb-5">
@@ -33,32 +30,22 @@
                                             <h5 class="card-title">
                                                 <%= item.name %>
                                             </h5>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <form class="input-group" action="/wish/update" method="POST">
-                                                <input type="hidden" name="productId" value="<%= item.id %>">
-                                                <button class="btn btn-outline-secondary btn-sm" type="submit"
-                                                    name="action" value="decrease">-</button>
-                                                <input style="max-width:100px" type="text"
-                                                    class="form-control  form-control-sm text-center quantity-input"
-                                                    value="<%= item.quantity %>">
-                                                <button class="btn btn-outline-secondary btn-sm" type="submit"
-                                                    name="action" value="increase">+</button>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-2 text-end">
-                                            <p class="fw-bold">
-                                                ₩<%= item.price.toLocaleString() %>
+                                            <p class="text-muted">₩<%= item.price.toLocaleString() %>
                                             </p>
+                                        </div>
+                                        <div class="col text-end">
+                                            <form action="/cart/add" method="POST" style="display: inline;">
+                                                <input type="hidden" name="productId" value="<%= item.id %>">
+                                                <button class="btn btn-sm btn-outline-primary" type="submit">
+                                                    <i class="bi bi-cart-plus"></i> 장바구니에 담기
+                                                </button>
+                                            </form>
                                             <form action="/wish/delete" method="POST" style="display: inline;">
                                                 <input type="hidden" name="productId" value="<%= item.id %>">
                                                 <button class="btn btn-sm btn-outline-danger" type="submit">
-                                                    <i class="bi bi-trash"></i>
+                                                    <i class="bi bi-trash"></i> 위시리스트에서 삭제하기
                                                 </button>
                                             </form>
-                                            <p class="fw-bold productPrice" style="display: none;">
-                                                <%= item.price * item.quantity %>
-                                            </p>
                                         </div>
                                     </div>
                                     <% }) %>

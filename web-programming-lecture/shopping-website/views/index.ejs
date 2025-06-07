@@ -125,10 +125,9 @@
             <a href="/products/<%= featuredProducts[j].id %>">
               <div class="card m-1">
                 <img class="thumbnail" src="<%= featuredProducts[j].thumbnail %>" />
-                <!-- TODO: 위시리스트 추가 -->
-                <form class="whishListButton" action="#" method="POST">
+                <form class="wishListButtonForm" action="/wish/add" method="POST">
                   <input type="hidden" name="productId" value="<%= featuredProducts[j].id %>">
-                  <button type="submit" style="color: white;""><i class=" bi bi-heart"></i></button>
+                  <button type="submit" class="btn wishListButton"><i class=" bi bi-suit-heart-fill"></i></button>
                 </form>
                 <span class="recommendProductSpan">
                   <%= featuredProducts[j].name %>

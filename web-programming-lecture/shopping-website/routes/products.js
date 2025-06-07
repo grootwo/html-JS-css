@@ -11,10 +11,17 @@ router.get('/', (req, res) => {
         db.all('SELECT * FROM products WHERE is_featured = 1 ORDER BY likes DESC LIMIT 4', (err2, featuredProducts) => {
             if (err2) return res.status(500).send('DB 오류: 추천 상품 조회 실패');
 
-            res.render('products', {
-                allProducts: allProducts,
-                featuredProducts: featuredProducts,
-                user: req.session.user
+            db.all('SELECT * FROM wish WHERE c.user_id = ' + req.session.user.id.toString(), (err3, wishProducts) => {
+                if (err3) return res.status(500).send('DB 오류: 위시 상품 조회 실패');
+
+                console.log('wish Products');
+                console.log(wishProducts);
+                res.render('products', {
+                    allProducts: allProducts,
+                    featuredProducts: featuredProducts,
+                    wishProducts: wishProducts,
+                    user: req.session.user
+                });
             });
         });
     });

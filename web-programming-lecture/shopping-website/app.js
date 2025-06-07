@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 const userRouter = require('./routes/user');
 const productRouter = require('./routes/products');
 const cartRouter = require('./routes/cart');
+const wishRouter = require('./routes/wish');
 const orderRouter = require('./routes/order');
 var expressLayouts = require('express-ejs-layouts');
 var express = require('express');
@@ -48,6 +49,7 @@ app.get('/login', (req, res) => {
 });
 app.use('/products', productRouter);
 app.use('/cart', cartRouter);
+app.use('/wish', wishRouter);
 app.use('/order', orderRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));

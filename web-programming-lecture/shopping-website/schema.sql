@@ -46,3 +46,13 @@ CREATE TABLE cart_items (
                             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                             PRIMARY KEY(user_id, product_id)
 );
+
+-- 위시리스트 테이블
+
+DROP TABLE IF EXISTS wish_items;
+CREATE TABLE wish_items (
+                            user_id INTEGER NOT NULL,
+                            product_id INTEGER NOT NULL,
+                            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                            PRIMARY KEY(user_id, product_id)
+);

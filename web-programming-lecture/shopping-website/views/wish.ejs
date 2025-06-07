@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>위시리스트</title>
+    <style>
+    </style>
+</head>
+
+<script>
+</script>
+
+<body>
+    <div class="container py-5">
+        <h1 class="mb-5">
+            <%= user.name %>님의 위시리스트
+        </h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <% if (wishItems.length===0) { %>
+                    <h3 class="mb-3">위시리스트가 비어 있습니다.</h3>
+                    <% } else { %>
+                        <!-- wish Items -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <% wishItems.forEach(item=> { %>
+                                    <div class="row wish-item mb-3">
+                                        <div class="col-md-3">
+                                            <img src="<%= item.thumbnail %>" alt="Product 1" class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <h5 class="card-title">
+                                                <%= item.name %>
+                                            </h5>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <form class="input-group" action="/wish/update" method="POST">
+                                                <input type="hidden" name="productId" value="<%= item.id %>">
+                                                <button class="btn btn-outline-secondary btn-sm" type="submit"
+                                                    name="action" value="decrease">-</button>
+                                                <input style="max-width:100px" type="text"
+                                                    class="form-control  form-control-sm text-center quantity-input"
+                                                    value="<%= item.quantity %>">
+                                                <button class="btn btn-outline-secondary btn-sm" type="submit"
+                                                    name="action" value="increase">+</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-2 text-end">
+                                            <p class="fw-bold">
+                                                ₩<%= item.price.toLocaleString() %>
+                                            </p>
+                                            <form action="/wish/delete" method="POST" style="display: inline;">
+                                                <input type="hidden" name="productId" value="<%= item.id %>">
+                                                <button class="btn btn-sm btn-outline-danger" type="submit">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                            <p class="fw-bold productPrice" style="display: none;">
+                                                <%= item.price * item.quantity %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                        </div>
+                        <% } %>
+                            <!-- Continue Shopping Button -->
+                            <div class="text-start mb-4">
+                                <a href="/products" class="btn btn-outline-primary">
+                                    <i class="bi bi-arrow-left me-2"></i>상품 계속 보기
+                                </a>
+                            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
